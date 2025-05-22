@@ -1,68 +1,126 @@
-// Questo è il file: tuo_progetto_flutter/android/app/build.gradle.kts
-// Questo file definisce la configurazione di build per il modulo Android della tua app.
+<!DOCTYPE html>
+<html lang="it">
 
-plugins {
-    id("com.android.application")
-    // Applica il plugin Kotlin Android. La sua versione è definita in settings.gradle.kts.
-    id("kotlin-android")
-    // Il Flutter Gradle Plugin deve essere applicato dopo i plugin Android e Kotlin Gradle.
-    id("dev.flutter.flutter-gradle-plugin")
-    // Applica il plugin Google services al modulo dell'app per Firebase.
-    id("com.google.gms.google-services")
-}
-
-android {
-    namespace = "com.example.orion_gym" // Assicurati che questo sia il tuo package name
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"
-
-    compileOptions {
-        // Imposta la compatibilità del codice Java sorgente e target a Java 21.
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirko & Elena - 13 Settembre 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #9CAF88;
+      color: #B07F7F;
+      background-image: url('cornice_floreale_laterale.png');
+      background-repeat: repeat-y;
+      background-position: left top, right top;
+      background-size: 200px auto;
+      background-attachment: fixed;
+      padding: 0 220px;
     }
 
-    kotlinOptions {
-        // *** IMPORTANTE: Imposta il target JVM per il codice Kotlin a 21. ***
-        // Questa versione è ora supportata dal plugin Kotlin 1.9.0 e AGP 8.3.0.
-        jvmTarget = "21"
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      text-align: center;
     }
 
-    // Configurazione esplicita del toolchain Java a 21.
-    // Questo indica a Gradle di usare la tua installazione Java 21 per la compilazione.
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(21))
-        }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #B07F7F;
+      margin: 0;
     }
 
-    defaultConfig {
-        applicationId = "com.example.orion_gym" // Assicurati che questo sia il tuo package name
-        minSdk = 23
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+    header h2 {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      color: #6B5B5B;
     }
 
-    buildTypes {
-        release {
-            signingConfig = signingConfigs.getByName("debug")
-        }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 15px;
     }
-}
 
-flutter {
-    source = "../.."
-}
+    h3 {
+      color: #B07F7F;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin-top: 0;
+      text-align: center;
+    }
 
-dependencies {
-    // Import the Firebase BoM (Bill of Materials) per gestire le versioni compatibili
-    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
+    p, li, label {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
 
-    // Aggiungi qui le dipendenze per i prodotti Firebase che usi
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.firebase:firebase-firestore")
+    form input,
+    form textarea,
+    form select,
+    form button {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-    // Mantieni qui le tue altre dipendenze esistenti
-}
+    form button {
+      background-color: #B07F7F;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #a66e6e;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mirko & Elena</h1>
+    <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
+  </header>
+
+  <section>
+    <h3>Programma della giornata</h3>
+    <p>
+      La nostra giornata speciale inizierà alle <strong>16:30</strong> con la cerimonia civile immersa nel verde del parco del Du Lac et Du Parc Grand Resort.
+      Dopo esserci detti “sì”, ci sposteremo nella suggestiva terrazza della piscina Cristallo, dove dalle <strong>17:30</strong> vi accoglieremo per un raffinato aperitivo all’aperto.
+      Alle <strong>19:00</strong> ci ritroveremo nella veranda panoramica per una cena indimenticabile, circondati dall’atmosfera romantica del lago e dalla compagnia di tutti voi.
+      Infine, alle <strong>21:00</strong>, sarà il momento del taglio della torta, seguito da musica, balli e tanta allegria con il nostro DJ set fino all’<strong>1:00</strong>.
+    </p>
+  </section>
