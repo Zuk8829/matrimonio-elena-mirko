@@ -1,50 +1,152 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirko & Elena - Matrimonio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirko & Elena - 13 Settembre 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background-color: #9CAF88; /* verde salvia */
-      color: #7B4B4B; /* rosa antico */
+      font-family: 'Montserrat', sans-serif;
+      background-color: #9CAF88;
+      color: #3B3B3B;
     }
 
     header {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
       text-align: center;
-      padding: 60px 20px;
     }
 
-    h1 {
+    header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5em;
+      font-size: 3rem;
+      color: #B27777;
       margin: 0;
     }
 
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 20px auto;
+    header h2 {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #555;
     }
 
-    .cover-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    h3 {
+      color: #B27777;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
+    }
+
+    form input,
+    form textarea,
+    form select,
+    form button {
       display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #B27777;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #fff;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Mirko & Elena</h1>
-    <p>Ci sposiamo! 13 settembre 2025<br>Du Lac et Du Parc Grand Resort, Riva del Garda</p>
+    <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
   </header>
-  <img src="img/IMG-20240922-WA0011.jpg" alt="Mirko e Elena" class="cover-image">
+
+  <section>
+    <h3>Programma della giornata</h3>
+    <ul>
+      <li>16:30 - Cerimonia civile al parco</li>
+      <li>17:30 - Aperitivo in terrazza piscina Cristallo</li>
+      <li>19:00 - Cena in veranda</li>
+      <li>21:00 - Taglio torta e DJ set fino all'1:00</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>RSVP</h3>
+    <form>
+      <label for="nome">Nome e Cognome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="presenza">Parteciperai?</label>
+      <select id="presenza" name="presenza" required>
+        <option value="">Seleziona</option>
+        <option value="si">Sì</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="scelta">Preferenze alimentari</label>
+      <select id="scelta" name="scelta">
+        <option value="">Seleziona</option>
+        <option value="carne">Carne</option>
+        <option value="pesce">Pesce</option>
+        <option value="vegano">Vegano</option>
+      </select>
+
+      <label for="note">Allergie o intolleranze</label>
+      <textarea id="note" name="note"></textarea>
+
+      <button type="submit">Invia conferma</button>
+    </form>
+  </section>
+
+  <section>
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <img src="img/IMG-20240922-WA0011.jpg" alt="Immagine matrimonio" />
+      <!-- Aggiungerai altre immagini qui -->
+    </div>
+  </section>
+
+  <section>
+    <h3>Regalo di nozze</h3>
+    <p>Se desideri contribuire al nostro viaggio di nozze, ti forniremo presto l'IBAN ❤️</p>
+  </section>
+
+  <footer>
+    © 2025 Mirko & Elena. Tutti i diritti riservati.
+  </footer>
 </body>
+
 </html>
+
 
 
