@@ -1,148 +1,65 @@
-<!DOCTYPE html>
-<html lang="it">
+// Questo è il file: tuo_progetto_flutter/android/app/build.gradle (o build.gradle.kts)
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mirko  &  Elena - 13 Settembre 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #9CAF88; /* verde salvia */
-      color: #3B3B3B;
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("dev.flutter.flutter-gradle-plugin")
+    // Questa riga applica il plugin Google services al modulo dell'app.
+    id("com.google.gms.google-services") // Senza 'version' e 'apply false' qui
+}
+
+android {
+    namespace = "com.example.orion_gym" // Assicurati che questo sia il tuo package name
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = "27.0.12077973"
+
+    compileOptions {
+        // Aggiorna la compatibilità Java a VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
-    header {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
-      text-align: center;
+    kotlinOptions {
+        jvmTarget = "17" // Aggiorna anche jvmTarget per Kotlin, usa stringa letterale
     }
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #B27777;
-      margin: 0;
+    // *** AGGIUNTO QUI: Configurazione esplicita del toolchain Java ***
+    // Questo aiuta Gradle a scegliere la versione corretta di Java per la compilazione.
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
+    }
+    // *** FINE AGGIUNTA ***
+
+    defaultConfig {
+        applicationId = "com.example.orion_gym" // Assicurati che questo sia il tuo package name
+        minSdk = 23 // Era flutter.minSdkVersion, ora impostato a 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
     }
 
-    header h2 {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #555;
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.getByName("debug")
+        }
     }
+}
 
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 2rem;
-      border-radius: 15px;
-    }
+flutter {
+    source = "../.."
+}
 
-    h3 {
-      color: #B27777;
-      font-family: 'Montserrat', sans-serif;
-      margin-top: 0;
-    }
+dependencies {
+    // Import the Firebase BoM (Bill of Materials) per gestire le versioni compatibili
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
 
-    .programma {
-      font-family: 'Playfair Display', serif;
-      text-align: justify;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
+    // Aggiungi qui le dipendenze per i prodotti Firebase che usi
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")     // Per Firebase Authentication
+    implementation("com.google.firebase:firebase-firestore") // Per Cloud Firestore
 
-    form input,
-    form textarea,
-    form select,
-    form button {
-      display: block;
-      width: 100%;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form button {
-      background-color: #B27777;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #fff;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Mirko & Elena</h1>
-    <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
-  </header>
-
-  <section>
-    <h3>Programma della giornata</h3>
-    <p class="programma">
-      La nostra giornata speciale inizierà alle <strong>16:30</strong> con la cerimonia civile immersa nel verde del parco del Du Lac et Du Parc Grand Resort.  
-      Dopo esserci detti "sì", ci sposteremo nella suggestiva terrazza della piscina Cristallo, dove dalle <strong>17:30</strong> vi accoglieremo per un raffinato aperitivo all’aperto.  
-      Alle <strong>19:00</strong> ci ritroveremo nella veranda panoramica per una cena indimenticabile, circondati dall’atmosfera romantica del lago e dalla compagnia di tutti voi.  
-      Infine, alle <strong>21:00</strong>, sarà il momento del taglio della torta, seguito da musica, balli e tanta allegria con il nostro DJ set fino all’<strong>1:00</strong>.
-    </p>
-  </section>
-
-  <section>
-    <h3>RSVP</h3>
-    <form>
-      <label for="nome">Nome e Cognome</label>
-      <input type="text" id="nome" name="nome" required />
-
-      <label for="presenza">Parteciperai?</label>
-      <select id="presenza" name="presenza" required>
-        <option value="">Seleziona</option>
-        <option value="si">Sì</option>
-        <option value="no">No</option>
-      </select>
-
-      <label for="scelta">Preferenze alimentari</label>
-      <select id="scelta" name="scelta">
-        <option value="">Seleziona</option>
-        <option value="carne">Carne</option>
-        <option value="pesce">Pesce</option>
-        <option value="vegano">Vegano</option>
-      </select>
-
-      <label for="note">Allergie o intolleranze</label>
-      <textarea id="note" name="note"></textarea>
-
-      <button type="submit">Invia conferma</button>
-    </form>
-  </section>
-
-  <section>
-    <h3>Gallery</h3>
-    <div class="gallery">
-      <img src="img/IMG-20240922-WA0011.jpg" alt="Immagine matrimonio" />
-      <!-- Aggiungerai altre immagini qui -->
-    </div>
-  </section>
-
-  <section>
-    <h3>Regalo di nozze</h3>
-    <p>Se desideri contribuire al nostro viaggio di nozze, t
+    // Mantieni qui le tue altre dipendenze esistenti (es. per Google Fonts, Shared Preferences, UUID)
+}
