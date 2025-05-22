@@ -172,6 +172,38 @@
       z-index: 2; /* Assicura che la freccia sia sopra altri elementi */
     }
 
+    /* NUOVI STILI PER LA SEZIONE REGALO DI NOZZE */
+    .gift-section {
+        background-image: url('img/parchi-ovest.jpg'); /* Immagine di sfondo per i Parchi dell'Ovest */
+        background-size: cover; /* L'immagine copre l'intera area */
+        background-position: center; /* Centra l'immagine */
+        background-repeat: no-repeat; /* Non ripete l'immagine */
+        color: #FFFFFF; /* Colore del testo bianco per maggiore contrasto */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ombra sul testo per leggibilità */
+        min-height: 250px; /* Altezza minima per vedere bene lo sfondo */
+        display: flex; /* Per centrare verticalmente il contenuto */
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente */
+        align-items: center; /* Centra orizzontalmente */
+        text-align: center; /* Centra il testo */
+        padding: 3rem 2rem; /* Più padding per lasciare spazio all'immagine */
+    }
+
+    .gift-section h3,
+    .gift-section p {
+        color: #FFFFFF; /* Forza il colore del testo a bianco per essere leggibile */
+        background-color: rgba(0, 0, 0, 0.4); /* Sfondo semi-trasparente per il testo */
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-top: 10px; /* Spazio sopra il paragrafo */
+        margin-bottom: 10px; /* Spazio sotto il paragrafo */
+    }
+
+    .gift-section h3 {
+        font-size: 2.2rem; /* Rendi il titolo leggermente più grande */
+    }
+
+
   </style>
 </head>
 
@@ -252,9 +284,12 @@
     </div>
   </section>
 
-  <section>
-    <h3>Regalo di nozze</h3>
-    <p>Se desideri contribuire al nostro viaggio di nozze, ti forniremo presto l'IBAN ❤️</p>
+  <section class="gift-section">     <h3>Il Nostro Viaggio di Nozze</h3>
+    <p>
+        Aiutateci a esplorare le meraviglie dei **Parchi dell'Ovest Americano**!
+        Il vostro contributo sarà un ricordo indimenticabile di questo sogno.
+        Presto vi forniremo l'IBAN per rendere questo viaggio realtà ❤️
+    </p>
   </section>
 
   <footer>
