@@ -10,35 +10,14 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #9CAF88;
-      color: #B27777;
+      background-color: #9CAF88; /* Verde salvia desiderato */
+      color: #B27777; /* Colore del testo principale */
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Cornici floreali laterali */
-    .flower-border {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 100px;
-      z-index: 0;
-      background-repeat: repeat-y;
-      background-size: contain;
-      background-position: center;
-      opacity: 0.6;
-    }
-
-    .flower-left {
-      left: 0;
-      background-image: url('img/floreale-sinistra.png');
-    }
-
-    .flower-right {
-      right: 0;
-      background-image: url('img/floreale-destra.png');
-    }
-
+    /* Cornici floreali laterali - RIMOSSE */
+    
     header, section, footer {
       position: relative;
       z-index: 1;
@@ -66,7 +45,8 @@
     section {
       max-width: 800px;
       margin: 2rem auto;
-      background-color: rgba(255, 255, 255, 0.95);
+      /* background-color: rgba(255, 255, 255, 0.95); */ /* Rimosso per mostrare lo sfondo del body */
+        background-color: transparent; /* Assicurati che lo sfondo delle sezioni sia trasparente */
       padding: 2rem;
       border-radius: 15px;
       text-align: justify;
@@ -101,10 +81,11 @@
     }
 
     .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
+      /* width: 100%; */
+      /* max-width: 300px; */
+      /* margin: 10px; */
+      /* border-radius: 10px; */
+        display: none; /* Nasconde l'immagine della gallery */
     }
 
     footer {
@@ -171,72 +152,54 @@
       z-index: 2;
     }
 
-    /* NUOVI STILI PER LA SEZIONE REGALO DI NOZZE */
+    /* STILI PER LA SEZIONE REGALO DI NOZZE (RIPRISTINATI E SENZA IMMAGINE) */
     .gift-section {
-        /* background-color: #9CAF88; */ /* Rimuoviamo questo perché l'immagine lo coprirà */
-        position: relative; /* Necessario per posizionare l'overlay */
+        background-color: transparent; /* Assicurati che lo sfondo della sezione sia trasparente */
+        position: relative;
         padding: 2rem;
         border-radius: 15px;
         overflow: hidden;
-        min-height: 300px; /* Altezza minima per apprezzare l'immagine */
-        display: flex; /* Per centrare il contenuto */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        min-height: auto; /* Altezza automatica, non più legata all'immagine */
+        display: block; /* Non più flex per centratura immagine, tornerà al blocco standard */
+        text-align: center; /* Centra il testo */
     }
 
     .gift-section .background-image-overlay {
-        position: absolute;
-        inset: 0; /* Copre completamente la sezione padre */
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Grand_Canyon_Pastel_Painting.jpg');
-        background-size: cover;
-        background-position: center;
-        /* Rimuovi l'opacità bassa qui e usiamo un overlay scuro sopra */
-        z-index: 0; /* Assicurati che sia dietro il contenuto */
-    }
-
-    .gift-section .background-image-overlay::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Overlay scuro semi-trasparente */
-        z-index: 1; /* Sopra l'immagine ma sotto il testo */
+        display: none; /* Nasconde completamente l'overlay e l'immagine di sfondo */
     }
 
     .gift-section .content-wrapper {
         position: relative;
-        z-index: 2; /* Assicurati che il contenuto sia sopra l'overlay e l'immagine */
-        color: #FFFFFF; /* Testo bianco per un'ottima leggibilità sull'overlay scuro */
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Ombra più forte per il testo */
+        z-index: 1; /* Torna al z-index standard */
+        color: #B27777; /* Colore originale del testo per le sezioni standard */
+        text-shadow: none; /* Rimuovi l'ombra dal testo */
     }
 
     .gift-section h3 {
-        color: #FFFFFF; /* Colore bianco per il titolo all'interno di questa sezione */
-        font-size: 2.5rem; /* Reso più grande per risaltare */
-        font-family: 'Great Vibes', cursive; /* Usa un font più elegante per il titolo */
-        margin-bottom: 1rem;
+        color: #B27777; /* Colore originale dei titoli H3 */
+        font-size: 1.5rem; /* Torna alla dimensione standard per H3 */
+        font-family: 'Montserrat', sans-serif; /* Torna al font standard */
+        margin-bottom: 0;
     }
 
     .gift-section p {
-        color: #FFFFFF; /* Colore bianco per i paragrafi */
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 0.8rem;
+        color: #B27777; /* Colore originale dei paragrafi */
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
     }
 
     .gift-section strong {
-        font-size: 1.4rem; /* Rendi l'IBAN più grande e visibile */
-        display: block; /* Metti l'IBAN su una nuova riga */
-        margin-top: 1rem;
+        font-size: 1rem; /* Torna alla dimensione standard */
+        display: inline; /* Non più block */
+        margin-top: 0;
     }
 
   </style>
 </head>
 
 <body>
-    <div class="flower-border flower-left"></div>
-  <div class="flower-border flower-right"></div>
+    
 
   <header>
     <h1>Mirko & Elena</h1>
@@ -311,13 +274,11 @@
   <section>
     <h3>Gallery</h3>
     <div class="gallery">
-      <img src="img/IMG-20240922-WA0011.jpg" alt="Immagine matrimonio" />
-    </div>
+          </div>
   </section>
 
 <section class="gift-section">
-  <div class="background-image-overlay"></div>
-  <div class="content-wrapper">
+    <div class="content-wrapper">
     <h3>Regalo di nozze</h3>
     <p>Il regalo più bello sarà la vostra presenza, ma se desiderate contribuire al nostro viaggio di nozze, potete farlo con un bonifico:</p>
     <p><strong>IBAN:</strong> IT00A0000000000000000000000</p>
