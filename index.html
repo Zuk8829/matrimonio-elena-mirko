@@ -1,17 +1,34 @@
+Perfetto! Riprendiamo da zero con queste indicazioni chiare.
+
+Abbiamo:
+
+Sfondo principale: Verde salvia.
+Font intestazione: Great Vibes.
+Font testi: Montserrat.
+Colore testi (tutti): Rosa antico.
+Ecco il codice HTML e CSS aggiornato con queste specifiche. Ho usato dei codici esadecimali comuni per "verde salvia" (#9CAF88) e "rosa antico" (#B27777) che sono quelli che avevamo già usato in precedenza e che so che ti piacciono.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirko & Elena - Il Nostro Giorno Speciale</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Qui andranno tutti i tuoi stili CSS */
+        /* Stili CSS globali */
         body {
             margin: 0;
-            font-family: sans-serif; /* Font di base, lo cambieremo */
-            background-color: #f0f0f0; /* Un colore neutro di partenza */
-            color: #333; /* Colore del testo di base */
+            font-family: 'Montserrat', sans-serif; /* Font per tutti i testi */
+            background-color: #9CAF88; /* Sfondo verde salvia */
+            color: #B27777; /* Colore del testo principale: Rosa antico */
             line-height: 1.6;
+            position: relative; /* Necessario per posizionamento assoluto se aggiungiamo elementi */
+            overflow-x: hidden; /* Evita scroll orizzontale */
         }
 
         .container {
@@ -20,62 +37,105 @@
             padding: 20px;
         }
 
-        h1, h2, h3 {
+        header {
+            background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per header */
+            padding: 2rem;
             text-align: center;
-            color: #555;
+            border-radius: 0 0 15px 15px; /* Angoli arrotondati solo in basso */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive; /* Font per l'intestazione H1 */
+            font-size: 3.5rem; /* Dimensione grande per l'intestazione principale */
+            color: #B27777; /* Colore rosa antico per l'intestazione */
+            margin: 0;
+        }
+
+        header h2 {
+            font-family: 'Montserrat', sans-serif; /* Font per la sotto-intestazione H2 */
+            font-size: 1.5rem;
+            color: #B27777; /* Colore rosa antico */
+            margin-top: 0.5rem;
         }
 
         section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.95); /* Sfondo semi-trasparente per le sezioni */
+            padding: 2rem;
+            margin: 2rem auto; /* Margine sopra e sotto, centrato */
+            border-radius: 15px; /* Angoli arrotondati per le sezioni */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            text-align: justify; /* Testo giustificato nelle sezioni */
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif; /* Font per i titoli H3 */
+            font-size: 2rem;
+            color: #B27777; /* Colore rosa antico per i titoli H3 */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        p, li {
+            font-family: 'Montserrat', sans-serif; /* Assicura che anche p e li usino Montserrat */
+            color: #B27777; /* Colore rosa antico per paragrafi e liste */
         }
 
         footer {
+            background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per footer */
             text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.9em;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #B27777; /* Colore rosa antico per il footer */
+            border-radius: 15px 15px 0 0; /* Angoli arrotondati solo in alto */
+            margin-top: 2rem;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Il Nostro Matrimonio</h1>
-            <h2>Mirko & Elena</h2>
+            <h1>Mirko & Elena</h1>
+            <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
         </div>
     </header>
 
     <main>
-        <section id="introduzione">
+        <section id="programma">
             <div class="container">
-                <h3>Benvenuti!</h3>
-                <p>Questa è la sezione di introduzione. Possiamo personalizzarla come preferisci.</p>
-            </div>
-        </section>
-
-        <section id="dettagli">
-            <div class="container">
-                <h3>Dettagli dell'Evento</h3>
-                <p>Qui potremo inserire informazioni su data, ora e luogo.</p>
+                <h3>Programma della giornata</h3>
+                <p>Ecco un esempio di testo per il programma.</p>
+                <ul>
+                    <li>Ora 1: Cerimonia</li>
+                    <li>Ora 2: Aperitivo</li>
+                    <li>Ora 3: Cena</li>
+                </ul>
             </div>
         </section>
 
         <section id="rsvp">
             <div class="container">
                 <h3>Conferma la Tua Presenza</h3>
-                <p>Modulo RSVP o istruzioni per la conferma.</p>
+                <p>Ti preghiamo di confermare la tua presenza entro il [Data].</p>
+                </div>
+        </section>
+
+        <section id="regalo-nozze">
+            <div class="container">
+                <h3>Regalo di Nozze</h3>
+                <p>Se desiderate contribuire al nostro viaggio di nozze, ecco i dettagli:</p>
+                <p style="text-align:center;"><strong>IBAN:</strong> IT00A0000000000000000000000</p>
+                <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
             </div>
         </section>
 
-        <section id="lista-nozze">
+        <section id="gallery">
             <div class="container">
-                <h3>Lista Nozze / Regalo</h3>
-                <p>Informazioni sul regalo di nozze.</p>
-            </div>
+                <h3>Gallery</h3>
+                <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
+                </div>
         </section>
     </main>
 
