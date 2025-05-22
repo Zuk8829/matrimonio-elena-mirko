@@ -141,4 +141,59 @@
       <input type="email" id="email" name="email" placeholder="La tua email..." required>
 
       <label for="presenza">Parteciperai?</label>
-      <select id="presenza"
+      <select id="presenza" name="presenza">
+        <option value="sì">Sì, con gioia!</option>
+        <option value="forse">Forse, ti aggiorno</option>
+        <option value="no">Purtroppo no</option>
+      </select>
+
+      <label for="note">Note aggiuntive</label>
+      <textarea id="note" name="note" rows="4" placeholder="Intolleranze, richieste particolari..."></textarea>
+
+      <button type="submit">Invia RSVP</button>
+    </form>
+  </section>
+
+  <section>
+    <h3>Regalo di nozze</h3>
+    <p>
+      Il regalo più bello sarà la vostra presenza, ma se desiderate contribuire al nostro viaggio di nozze, potete farlo con un bonifico:
+    </p>
+    <p style="text-align:center; font-size: 1.2rem;"><strong>IBAN:</strong> IT00A0000000000000000000000</p>
+    <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
+  </section>
+
+  <section>
+    <h3>Galleria fotografica</h3>
+    <div class="gallery" id="galleria">
+      <!-- Le immagini caricate compariranno qui -->
+    </div>
+    <form id="uploadForm">
+      <label for="foto">Carica una tua foto della giornata:</label>
+      <input type="file" id="foto" accept="image/*">
+      <button type="button" onclick="aggiungiFoto()">Carica foto</button>
+    </form>
+  </section>
+
+  <footer>
+    Con amore, Mirko & Elena – 13 Settembre 2025
+  </footer>
+
+  <script>
+    function aggiungiFoto() {
+      const fileInput = document.getElementById('foto');
+      const gallery = document.getElementById('galleria');
+      if (fileInput.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          gallery.appendChild(img);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+        fileInput.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
