@@ -2,207 +2,184 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mirko & Elena - 13 Settembre 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matrimonio Mirko & Elena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Cormorant Garamond', serif;
-      background-color: #9CAF88;
-      color: #B07F7F;
-      background-image: url('cornice_floreale_laterale.png');
-      background-repeat: repeat-y;
-      background-position: left top, right top;
-      background-size: 200px auto;
-      background-attachment: fixed;
-      padding: 0 220px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f5f1e6;
+      color: #5c4a3d;
     }
 
     header {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
+      background-color: #e6ddcc;
+      background-image: url('https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
     }
 
     header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      color: #B07F7F;
+      font-size: 3rem;
       margin: 0;
     }
 
-    header h2 {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-      color: #6B5B5B;
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
 
     section {
-      max-width: 800px;
-      margin: 2rem auto;
+      margin-bottom: 2rem;
+    }
+
+    h2, h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #6d5843;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: '🌿';
+      margin-right: 0.5rem;
+    }
+
+    .rsvp, .gift-section {
+      background-color: #fffaf3;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .gift-section {
+      position: relative;
       background-color: rgba(255, 255, 255, 0.95);
       padding: 2rem;
       border-radius: 15px;
+      margin: 2rem auto;
+      max-width: 800px;
+      overflow: hidden;
     }
 
-    h3 {
-      color: #B07F7F;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      margin-top: 0;
-      text-align: center;
+    .gift-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Grand_Canyon_Pastel_Painting.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
     }
 
-    p, li, label {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    form input,
-    form textarea,
-    form select,
-    form button {
-      display: block;
-      width: 100%;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    form button {
-      background-color: #B07F7F;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    form button:hover {
-      background-color: #a66e6e;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
+    .gift-section * {
+      position: relative;
+      z-index: 1;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #B07F7F;
-      margin-top: 3rem;
+      background-color: #e6ddcc;
+      font-size: 0.9rem;
+      color: #6d5843;
     }
+
+    .gallery-upload {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    input[type="file"], input[type="submit"], input[type="email"], input[type="text"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    input[type="submit"] {
+      background-color: #bfa980;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #a8916b;
+    }
+
   </style>
 </head>
 <body>
   <header>
     <h1>Mirko & Elena</h1>
-    <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
+    <p>13 Settembre 2025 - Riva del Garda</p>
   </header>
 
-  <section>
-    <h3>Programma della giornata</h3>
-    <p>
-      La nostra giornata speciale inizierà alle <strong>16:30</strong> con la cerimonia civile immersa nel verde del parco.
-      Alle <strong>17:30</strong> vi accoglieremo per un raffinato aperitivo sulla terrazza della piscina Cristallo.
-      Alle <strong>19:00</strong> ci ritroveremo nella veranda panoramica per la cena.
-      Alle <strong>21:00</strong> taglio torta, musica e balli nella sala Magnolia fino all’<strong>1:00</strong>.
-    </p>
-  </section>
+  <main>
+    <section>
+      <h2>Il nostro giorno speciale</h2>
+      <p>Ci sposeremo all'Hotel du Lac et du Parc Grand Resort a Riva del Garda. Sarà una giornata indimenticabile e speriamo di condividerla con voi!</p>
+    </section>
 
-  <section>
-    <h3>Conferma la tua presenza</h3>
-    <form>
-      <label for="nome">Nome e Cognome</label>
-      <input type="text" id="nome" name="nome" placeholder="Il tuo nome..." required>
+    <section>
+      <h3>Programma della giornata</h3>
+      <ul>
+        <li><strong>Rito civile:</strong> al parco</li>
+        <li><strong>Aperitivo:</strong> terrazza piscina Cristallo</li>
+        <li><strong>Cena:</strong> veranda</li>
+        <li><strong>Dopo cena:</strong> sala Magnolia</li>
+      </ul>
+    </section>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="La tua email..." required>
+    <section class="rsvp">
+      <h3>RSVP</h3>
+      <p>Per favore, conferma la tua presenza entro il 30 giugno 2025:</p>
+      <form action="#" method="post">
+        <input type="text" name="nome" placeholder="Il tuo nome" required><br><br>
+        <input type="email" name="email" placeholder="La tua email" required><br><br>
+        <input type="submit" value="Conferma presenza">
+      </form>
+    </section>
 
-      <label for="presenza">Parteciperai?</label>
-      <select id="presenza" name="presenza">
-        <option value="sì">Sì, con gioia!</option>
-        <option value="forse">Forse, ti aggiorno</option>
-        <option value="no">Purtroppo no</option>
-      </select>
-
-      <label for="note">Note aggiuntive</label>
-      <textarea id="note" name="note" rows="4" placeholder="Intolleranze, richieste particolari..."></textarea>
-
-      <button type="submit">Invia RSVP</button>
-    </form>
-  </section>
-
-  </section><section style="position: relative; overflow: hidden;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-                background-image: url('https://images.openai.com/blob/af7c40dc-d3d8-478e-b4f5-2a6fcaa2a9b6/grandcanyon_pastel.png?trim=auto&width=1200'); 
-                background-size: cover; 
-                background-position: center;
-                opacity: 0.15; 
-                z-index: 0;">
-    </div>
-    <div style="position: relative; z-index: 1;">
+    <section class="gift-section">
       <h3>Regalo di nozze</h3>
       <p>
         Il regalo più bello sarà la vostra presenza, ma se desiderate contribuire al nostro viaggio di nozze, potete farlo con un bonifico:
       </p>
       <p style="text-align:center; font-size: 1.2rem;"><strong>IBAN:</strong> IT00A0000000000000000000000</p>
       <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h3>Galleria fotografica</h3>
-    <div class="gallery" id="galleria">
-      <!-- Le immagini caricate compariranno qui -->
-    </div>
-    <form id="uploadForm">
-      <label for="foto">Carica una tua foto della giornata:</label>
-      <input type="file" id="foto" accept="image/*">
-      <button type="button" onclick="aggiungiFoto()">Carica foto</button>
-    </form>
-  </section>
+    <section>
+      <h3>Galleria fotografica</h3>
+      <p>Condividi con noi i tuoi scatti del matrimonio!</p>
+      <form class="gallery-upload" action="#" method="post" enctype="multipart/form-data">
+        <input type="file" name="foto" accept="image/*" required>
+        <input type="submit" value="Carica foto">
+      </form>
+    </section>
+  </main>
 
   <footer>
-    Con amore, Mirko & Elena – 13 Settembre 2025
+    Con amore, Mirko & Elena – 13.09.2025
   </footer>
-
-  <script>
-    function aggiungiFoto() {
-      const fileInput = document.getElementById('foto');
-      const gallery = document.getElementById('galleria');
-      if (fileInput.files.length > 0) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const img = document.createElement('img');
-          img.src = e.target.result;
-          gallery.appendChild(img);
-        };
-        reader.readAsDataURL(fileInput.files[0]);
-        fileInput.value = '';
-      }
-    }
-  </script>
 </body>
 </html>
