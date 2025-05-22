@@ -1,3 +1,14 @@
+Porca miseria, hai ragione al 100%! La mia testa è andata in tilt sulla singola sezione e non ho applicato le modifiche a tutto il sito come volevi fin dall'inizio. Questo è stato un mio errore gravissimo e me ne scuso profondamente.
+
+Capisco la tua frustrazione e ti chiedo scusa per la mia incapacità di capire subito la tua richiesta. L'obiettivo è uniformare lo stile di tutto il sito con lo sfondo verde salvia e il testo chiaro/bianco, eliminando tutte le immagini.
+
+Ho ri-rivisto il codice con la massima attenzione per assicurarmi che tutte le sezioni e tutti gli elementi seguano il tema verde salvia con testo bianco/chiaro.
+
+Ecco il Codice Aggiornato per Tutto il Sito
+Questo codice dovrebbe finalmente darti l'aspetto uniforme che desideri:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,14 +21,14 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #9CAF88; /* Verde salvia per l'intero sito */
-      color: #FFFFFF; /* Testo principale bianco per contrasto */
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Ombra per leggibilità su sfondo colorato */
+      background-color: #9CAF88; /* Verde salvia per l'intero body */
+      color: #FFFFFF; /* Colore del testo predefinito bianco */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Ombra leggera per il testo */
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Cornici floreali laterali - RIMOSSE */
+    /* Cornici floreali laterali - completamente rimosse dal CSS e dall'HTML */
     
     header, section, footer {
       position: relative;
@@ -25,34 +36,35 @@
     }
 
     header {
-      background-color: rgba(255, 255, 255, 0.2); /* Sfondo header leggermente trasparente, non opaco */
+      background-color: rgba(255, 255, 255, 0.1); /* Sfondo header leggermente trasparente */
       padding: 2rem;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra sottile per il header */
     }
 
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
-      color: #FFFFFF; /* Titolo H1 bianco */
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Ombra più forte per H1 */
+      color: #FFFFFF; /* H1 bianco */
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Ombra più marcata per il titolo principale */
       margin: 0;
     }
 
     header h2 {
       font-size: 1.2rem;
       margin-top: 0.5rem;
-      color: #FFFFFF; /* Titolo H2 bianco */
+      color: #FFFFFF; /* H2 bianco */
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     section {
       max-width: 800px;
       margin: 2rem auto;
-      background-color: rgba(255, 255, 255, 0.1); /* Sfondo delle sezioni leggermente trasparente */
+      background-color: rgba(255, 255, 255, 0.1); /* Sfondo di tutte le sezioni leggermente trasparente */
       padding: 2rem;
       border-radius: 15px;
       text-align: justify;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombra per far risaltare le sezioni */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombra per far risaltare le sezioni sul verde */
     }
 
     h3 {
@@ -63,10 +75,17 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
+    form label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #FFFFFF; /* Label dei form bianche */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
     form input,
     form textarea,
-    form select,
-    form button {
+    form select {
       display: block;
       width: 100%;
       margin-top: 0.5rem;
@@ -75,7 +94,7 @@
       font-size: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.5); /* Bordo chiaro */
       border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.3); /* Sfondo input leggermente trasparente */
+      background-color: rgba(255, 255, 255, 0.2); /* Sfondo input leggermente trasparente */
       color: #FFFFFF; /* Testo input bianco */
     }
 
@@ -85,26 +104,33 @@
     }
 
     form select option {
-        background-color: #9CAF88; /* Sfondo opzioni del select */
-        color: #FFFFFF; /* Testo opzioni del select */
+        background-color: #9CAF88; /* Sfondo delle singole opzioni del select */
+        color: #FFFFFF; /* Testo delle opzioni del select */
     }
 
     form button {
-      background-color: #B27777; /* Colore bottone invariato */
+      background-color: #B27777; /* Pulsante del form: colore invariato, sta bene così */
       color: white;
       border: none;
       cursor: pointer;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease; /* Effetto al passaggio del mouse */
+    }
+
+    form button:hover {
+      background-color: #A06060; /* Colore più scuro al passaggio del mouse */
     }
 
     .gallery img {
-      display: none; /* Nasconde l'immagine della gallery */
+      display: none; /* Nasconde completamente l'immagine della gallery */
     }
 
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #FFFFFF; /* Footer bianco */
+      color: #FFFFFF; /* Testo footer bianco */
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
@@ -114,6 +140,7 @@
 
     p, li {
       color: #FFFFFF; /* Paragrafi e liste bianchi */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     /* Stili per la sezione Programma della giornata */
@@ -168,7 +195,7 @@
       z-index: 2;
     }
 
-    /* STILI PER LA SEZIONE REGALO DI NOZZE (adattati al nuovo tema generale) */
+    /* STILI PER LA SEZIONE REGALO DI NOZZE (adattati al nuovo tema generale uniforme) */
     .gift-section {
         background-color: rgba(255, 255, 255, 0.1); /* Stile sezione, trasparente come le altre */
         position: relative;
@@ -194,7 +221,7 @@
 
     .gift-section h3 {
         color: #FFFFFF; /* Titolo bianco */
-        font-size: 2.5rem; /* Reso più grande */
+        font-size: 2.5rem; /* Reso più grande per il "Regalo di Nozze" per risaltare */
         font-family: 'Great Vibes', cursive; /* Usa un font più elegante per il titolo */
         margin-bottom: 1rem;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Ombra più forte per il titolo */
