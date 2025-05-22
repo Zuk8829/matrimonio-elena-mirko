@@ -124,3 +124,25 @@
       Infine, alle <strong>21:00</strong>, sarà il momento del taglio della torta, seguito da musica, balli e tanta allegria con il nostro DJ set fino all’<strong>1:00</strong>.
     </p>
   </section>
+  <section>
+    <h3>Conferma la tua presenza</h3>
+    <form>
+      <label for="nome">Nome e Cognome</label>
+      <input type="text" id="nome" name="nome" placeholder="Il tuo nome..." required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="La tua email..." required>
+
+      <label for="presenza">Parteciperai?</label>
+      <select id="presenza" name="presenza">
+        <option value="sì">Sì, con gioia!</option>
+        <option value="forse">Forse, ti aggiorno</option>
+        <option value="no">Purtroppo no</option>
+      </select>
+
+      <label for="note">Note aggiuntive</label>
+      <textarea id="note" name="note" rows="4" placeholder="Intolleranze, richieste particolari..."></textarea>
+
+      <button type="submit">Invia RSVP</button>
+    </form>
+  </section>
