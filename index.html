@@ -10,8 +10,9 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #9CAF88; /* Verde salvia desiderato */
-      color: #B27777; /* Colore del testo principale */
+      background-color: #9CAF88; /* Verde salvia per l'intero sito */
+      color: #FFFFFF; /* Testo principale bianco per contrasto */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Ombra per leggibilità su sfondo colorato */
       position: relative;
       overflow-x: hidden;
     }
@@ -24,7 +25,7 @@
     }
 
     header {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.2); /* Sfondo header leggermente trasparente, non opaco */
       padding: 2rem;
       text-align: center;
     }
@@ -32,31 +33,34 @@
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
-      color: #B27777;
+      color: #FFFFFF; /* Titolo H1 bianco */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Ombra più forte per H1 */
       margin: 0;
     }
 
     header h2 {
       font-size: 1.2rem;
       margin-top: 0.5rem;
-      color: #B27777;
+      color: #FFFFFF; /* Titolo H2 bianco */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     section {
       max-width: 800px;
       margin: 2rem auto;
-      /* background-color: rgba(255, 255, 255, 0.95); */ /* Rimosso per mostrare lo sfondo del body */
-        background-color: transparent; /* Assicurati che lo sfondo delle sezioni sia trasparente */
+      background-color: rgba(255, 255, 255, 0.1); /* Sfondo delle sezioni leggermente trasparente */
       padding: 2rem;
       border-radius: 15px;
       text-align: justify;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombra per far risaltare le sezioni */
     }
 
     h3 {
-      color: #B27777;
+      color: #FFFFFF; /* Titoli H3 bianchi */
       font-family: 'Montserrat', sans-serif;
       margin-top: 0;
       text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     form input,
@@ -69,30 +73,39 @@
       margin-bottom: 1.5rem;
       padding: 0.75rem;
       font-size: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid rgba(255, 255, 255, 0.5); /* Bordo chiaro */
       border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.3); /* Sfondo input leggermente trasparente */
+      color: #FFFFFF; /* Testo input bianco */
     }
 
+    form input::placeholder,
+    form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.8); /* Colore placeholder chiaro */
+    }
+
+    form select option {
+        background-color: #9CAF88; /* Sfondo opzioni del select */
+        color: #FFFFFF; /* Testo opzioni del select */
+    }
+
     form button {
-      background-color: #B27777;
+      background-color: #B27777; /* Colore bottone invariato */
       color: white;
       border: none;
       cursor: pointer;
     }
 
     .gallery img {
-      /* width: 100%; */
-      /* max-width: 300px; */
-      /* margin: 10px; */
-      /* border-radius: 10px; */
-        display: none; /* Nasconde l'immagine della gallery */
+      display: none; /* Nasconde l'immagine della gallery */
     }
 
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #fff;
+      color: #FFFFFF; /* Footer bianco */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     ul {
@@ -100,7 +113,7 @@
     }
 
     p, li {
-      color: #B27777;
+      color: #FFFFFF; /* Paragrafi e liste bianchi */
     }
 
     /* Stili per la sezione Programma della giornata */
@@ -117,51 +130,55 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.2); /* Sfondo item programma leggermente trasparente */
       padding: 15px 20px;
       border-radius: 10px;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per risalto */
     }
 
     .program-time {
       font-family: 'Great Vibes', cursive;
       font-size: 2rem;
-      color: #B27777;
+      color: #FFFFFF; /* Orario bianco */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
       margin-bottom: 5px;
     }
 
     .program-icon {
       font-size: 2.5rem;
       margin-bottom: 10px;
-      color: #B27777;
+      color: #FFFFFF; /* Icone bianche */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     .program-description {
       font-size: 1rem;
-      color: #B27777;
+      color: #FFFFFF; /* Descrizione programma bianca */
       margin: 0;
     }
 
     .program-item + .program-item::before {
       content: '↓';
       font-size: 2rem;
-      color: #B27777;
+      color: #FFFFFF; /* Freccia bianca */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
       margin: -10px 0;
       z-index: 2;
     }
 
-    /* STILI PER LA SEZIONE REGALO DI NOZZE (RIPRISTINATI E SENZA IMMAGINE) */
+    /* STILI PER LA SEZIONE REGALO DI NOZZE (adattati al nuovo tema generale) */
     .gift-section {
-        background-color: transparent; /* Assicurati che lo sfondo della sezione sia trasparente */
+        background-color: rgba(255, 255, 255, 0.1); /* Stile sezione, trasparente come le altre */
         position: relative;
         padding: 2rem;
         border-radius: 15px;
         overflow: hidden;
-        min-height: auto; /* Altezza automatica, non più legata all'immagine */
-        display: block; /* Non più flex per centratura immagine, tornerà al blocco standard */
-        text-align: center; /* Centra il testo */
+        min-height: auto;
+        display: block;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .gift-section .background-image-overlay {
@@ -170,29 +187,30 @@
 
     .gift-section .content-wrapper {
         position: relative;
-        z-index: 1; /* Torna al z-index standard */
-        color: #B27777; /* Colore originale del testo per le sezioni standard */
-        text-shadow: none; /* Rimuovi l'ombra dal testo */
+        z-index: 1;
+        color: #FFFFFF; /* Testo bianco */
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Ombra testo */
     }
 
     .gift-section h3 {
-        color: #B27777; /* Colore originale dei titoli H3 */
-        font-size: 1.5rem; /* Torna alla dimensione standard per H3 */
-        font-family: 'Montserrat', sans-serif; /* Torna al font standard */
-        margin-bottom: 0;
+        color: #FFFFFF; /* Titolo bianco */
+        font-size: 2.5rem; /* Reso più grande */
+        font-family: 'Great Vibes', cursive; /* Usa un font più elegante per il titolo */
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Ombra più forte per il titolo */
     }
 
     .gift-section p {
-        color: #B27777; /* Colore originale dei paragrafi */
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
+        color: #FFFFFF; /* Paragrafi bianchi */
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
     }
 
     .gift-section strong {
-        font-size: 1rem; /* Torna alla dimensione standard */
-        display: inline; /* Non più block */
-        margin-top: 0;
+        font-size: 1.4rem; /* IBAN più grande */
+        display: block; /* Metti l'IBAN su una nuova riga */
+        margin-top: 1rem;
     }
 
   </style>
