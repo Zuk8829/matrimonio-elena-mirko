@@ -54,7 +54,7 @@
             border-radius: 15px; /* Angoli arrotondati per le sezioni */
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
             text-align: justify; /* Testo giustificato nelle sezioni */
-            max-width: 250px; /* Larghezza delle schede */
+            max-width: 600px; /* Larghezza delle schede (puoi modificarla ulteriormente) */
         }
 
         h3 {
@@ -88,16 +88,19 @@
             margin-top: 1rem;
             margin-bottom: 0.5rem;
             color: #B27777;
+            font-weight: 600; /* Rendi le label più in evidenza */
         }
 
-        form input,
+        form input[type="text"],
+        form input[type="email"], /* Aggiunto campo email per comodità */
+        form input[type="number"],
         form textarea,
         form select {
             display: block;
-            width: 100%;
+            width: calc(100% - 20px); /* Regola la larghezza tenendo conto del padding */
             margin-top: 0.5rem;
             margin-bottom: 1.5rem;
-            padding: 0.75rem;
+            padding: 0.75rem 10px; /* Aggiunto padding orizzontale */
             font-size: 1rem;
             border: 1px solid rgba(178, 119, 119, 0.5); /* Bordo con tonalità rosa antico */
             border-radius: 5px;
@@ -114,6 +117,21 @@
             background-color: #F0F0F0; /* Sfondo opzioni del select leggermente diverso */
             color: #B27777; /* Testo opzioni del select rosa antico */
         }
+        
+        /* Stili specifici per i checkbox/radio (preferenze menù) */
+        .checkbox-group label {
+            display: inline-block; /* Per mettere label e input sulla stessa riga */
+            margin-right: 15px; /* Spazio tra le opzioni */
+            margin-top: 0.5rem;
+            font-weight: normal; /* Non grassetto per le opzioni */
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            display: inline-block; /* Per allineare il checkbox con la label */
+            width: auto; /* Annulla il width: 100% per i checkbox */
+            margin-right: 5px;
+        }
+
 
         form button {
             background-color: #B27777; /* Pulsante del form: colore rosa antico */
@@ -123,6 +141,8 @@
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            display: block; /* Per centrare il pulsante se necessario */
+            margin: 2rem auto 0; /* Centra il pulsante nel modulo */
         }
 
         form button:hover {
@@ -258,8 +278,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>Mirko & Elena</h1>
-            <h2>13 Settembre 2025</h2>
+            <h1>Mirko <br>&<br>Elena</h1>
+            <h2>13 Settembre 2025 - Du Lac et Du Parc Grand Resort, Riva del Garda</h2>
         </div>
     </header>
 
@@ -276,8 +296,39 @@
 
         <section id="rsvp">
             <h3>Conferma la Tua Presenza</h3>
-            <p>Ti preghiamo di confermare la tua presenza entro il [Data].</p>
-            </section>
+            <p>Ti preghiamo di compilare il modulo seguente per confermare la tua presenza. Ti ringraziamo!</p>
+            
+            <form action="https://formspree.io/f/mrbqvjgn" method="POST">
+                <label for="full_name">Nome e Cognome:</label>
+                <input type="text" id="full_name" name="Nome_Cognome" required placeholder="Es. Mario Rossi">
+
+                <label for="num_guests">Numero di persone (incluso te):</label>
+                <input type="number" id="num_guests" name="Numero_Invitati" min="1" value="1" required>
+
+                <p style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Preferenze nel menù:</p>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="Menu_Carne" value="Si_Carne"> Carne
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Menu_Pesce" value="Si_Pesce"> Pesce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Menu_Vegano" value="Si_Vegano"> Vegano
+                    </label>
+                </div>
+                <p style="font-size: 0.85rem; color: #8C5A5A; margin-top: 0.5rem;">Se più persone partecipano con preferenze diverse, specifica nelle note.</p>
+
+
+                <label for="allergies">Allergie o intolleranze alimentari:</label>
+                <textarea id="allergies" name="Allergie_Intolleranze" rows="4" placeholder="Es. Celiachia, lattosio, frutta secca..."></textarea>
+
+                <label for="message">Note aggiuntive (es. preferenze menù per altri invitati, seggioloni, ecc.):</label>
+                <textarea id="message" name="Note_Aggiuntive" rows="4" placeholder="Scrivi qui eventuali richieste speciali o dettagli aggiuntivi."></textarea>
+
+                <button type="submit">Invia conferma</button>
+            </form>
+        </section>
 
         <section id="regalo-nozze">
             <h3>Regalo di Nozze</h3>
@@ -294,7 +345,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 13/09/2025 Mirko & Elena</p>
+            <p>&copy; 2025 Mirko & Elena. Tutti i diritti riservati.</p>
         </div>
     </footer>
 </body>
