@@ -12,8 +12,7 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif; /* Font per tutti i testi */
-            background-color: #b6C1ad
-        ; /* Sfondo verde salvia */
+            background-color: #b6C1ad; /* Sfondo verde salvia - il tuo colore aggiornato */
             color: #B27777; /* Colore del testo principale: Rosa antico */
             line-height: 1.6;
             position: relative; /* Necessario per posizionamento assoluto se aggiungiamo elementi */
@@ -21,7 +20,7 @@
         }
 
         .container {
-            max-width: 960px;
+            max-width: 960px; /* Larghezza massima per il contenitore generale (header/footer) */
             margin: 0 auto;
             padding: 20px;
         }
@@ -55,9 +54,7 @@
             border-radius: 15px; /* Angoli arrotondati per le sezioni */
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
             text-align: justify; /* Testo giustificato nelle sezioni */
-            max-width: 600px; /* <--- Ho ridotto ulteriormente il max-width per un effetto più evidente */
-    /* Ho rimosso il .container da dentro le section per evitare che lo limiti due volte */max-width: 600px; /* <--- Ho ridotto ulteriormente il max-width per un effetto più evidente */
-    /* Ho rimosso il .container da dentro le section per evitare che lo limiti due volte */
+            max-width: 600px; /* Larghezza delle schede */
         }
 
         h3 {
@@ -84,6 +81,178 @@
             margin-top: 2rem;
             box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
         }
+
+        /* Stili per form (RSVP) */
+        form label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #B27777;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            display: block;
+            width: 100%;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid rgba(178, 119, 119, 0.5); /* Bordo con tonalità rosa antico */
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.7); /* Sfondo input più opaco per leggibilità */
+            color: #B27777; /* Testo input rosa antico */
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: rgba(178, 119, 119, 0.8); /* Colore placeholder rosa antico più chiaro */
+        }
+
+        form select option {
+            background-color: #F0F0F0; /* Sfondo opzioni del select leggermente diverso */
+            color: #B27777; /* Testo opzioni del select rosa antico */
+        }
+
+        form button {
+            background-color: #B27777; /* Pulsante del form: colore rosa antico */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #A06060; /* Colore più scuro al passaggio del mouse */
+        }
+
+        /* Stili per la sezione Programma della giornata */
+        .program-timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .program-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Sfondo item programma leggermente più opaco */
+            padding: 15px 20px;
+            border-radius: 10px;
+            width: 90%; /* Occupa il 90% della larghezza della sezione genitore */
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-time {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #B27777;
+            margin-bottom: 5px;
+        }
+
+        .program-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #B27777;
+        }
+
+        .program-description {
+            font-size: 1rem;
+            color: #B27777;
+            margin: 0;
+        }
+
+        .program-item + .program-item::before {
+            content: '↓';
+            font-size: 2rem;
+            color: #B27777;
+            margin: -10px 0;
+            z-index: 2;
+        }
+
+        /* Stili per la sezione Regalo di Nozze */
+        .gift-section {
+            /* Mantiene gli stili della sezione generica */
+            text-align: center; /* Centra il testo all'interno della sezione regalo */
+        }
+
+        .gift-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .gift-section strong {
+            font-size: 1.4rem;
+            display: block; /* Metti l'IBAN su una nuova riga */
+            margin-top: 1rem;
+        }
+
+        /* --- */
+        /* Media Queries per Ottimizzazione Responsive */
+        /* --- */
+
+        /* Stili per schermi fino a 768px (tablet e smartphone più grandi) */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem; /* Riduci la dimensione di H1 */
+            }
+
+            header h2 {
+                font-size: 1.2rem; /* Riduci la dimensione di H2 */
+            }
+
+            section {
+                padding: 1.5rem; /* Riduci il padding delle sezioni */
+                margin: 1.5rem auto; /* Riduci il margine verticale */
+                max-width: 90%; /* Occupa più larghezza su schermi piccoli */
+            }
+
+            h3 {
+                font-size: 1.8rem; /* Riduci la dimensione di H3 */
+            }
+
+            p, li {
+                font-size: 0.95rem; /* Riduci leggermente la dimensione del testo dei paragrafi */
+            }
+
+            .program-item {
+                width: 95%; /* Occupa quasi tutta la larghezza della sezione genitore */
+            }
+        }
+
+        /* Stili per schermi fino a 480px (smartphone) */
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2.2rem; /* Ancora più piccolo su smartphone */
+            }
+
+            header h2 {
+                font-size: 1rem; /* Dimensione minima per H2 */
+            }
+
+            section {
+                padding: 1rem; /* Padding ancora più ridotto */
+                margin: 1rem auto; /* Margine ancora più ridotto */
+                border-radius: 10px; /* Angoli leggermente più piccoli */
+                max-width: 95%; /* Occupa quasi tutta la larghezza dello schermo */
+            }
+
+            h3 {
+                font-size: 1.5rem; /* Dimensione minima per H3 */
+            }
+
+            p, li {
+                font-size: 0.9rem; /* Dimensione base per il testo su smartphone */
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,39 +265,31 @@
 
     <main>
         <section id="programma">
-            <div class="container">
-                <h3>Programma della giornata</h3>
-                <p>Ecco un esempio di testo per il programma.</p>
-                <ul>
-                    <li>Ora 1: Cerimonia</li>
-                    <li>Ora 2: Aperitivo</li>
-                    <li>Ora 3: Cena</li>
-                </ul>
-            </div>
+            <h3>Programma della giornata</h3>
+            <p>Ecco un esempio di testo per il programma.</p>
+            <ul>
+                <li>Ora 1: Cerimonia</li>
+                <li>Ora 2: Aperitivo</li>
+                <li>Ora 3: Cena</li>
+            </ul>
         </section>
 
         <section id="rsvp">
-            <div class="container">
-                <h3>Conferma la Tua Presenza</h3>
-                <p>Ti preghiamo di confermare la tua presenza entro il [Data].</p>
-                </div>
-        </section>
+            <h3>Conferma la Tua Presenza</h3>
+            <p>Ti preghiamo di confermare la tua presenza entro il [Data].</p>
+            </section>
 
         <section id="regalo-nozze">
-            <div class="container">
-                <h3>Regalo di Nozze</h3>
-                <p>Se desiderate contribuire al nostro viaggio di nozze, ecco i dettagli:</p>
-                <p style="text-align:center;"><strong>IBAN:</strong> IT00A0000000000000000000000</p>
-                <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
-            </div>
+            <h3>Regalo di Nozze</h3>
+            <p>Se desiderate contribuire al nostro viaggio di nozze, ecco i dettagli:</p>
+            <p style="text-align:center;"><strong>IBAN:</strong> IT00A0000000000000000000000</p>
+            <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
         </section>
 
         <section id="gallery">
-            <div class="container">
-                <h3>Gallery</h3>
-                <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
-                </div>
-        </section>
+            <h3>Gallery</h3>
+            <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
+            </section>
     </main>
 
     <footer>
