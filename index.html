@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirko & Elena - Il Nostro Giorno Speciale</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Stili CSS globali */
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif; /* Font per tutti i testi */
             background-color: #b6C1ad; /* Sfondo verde salvia - il tuo colore aggiornato */
-            color: #B27777 /* Colore del testo principale: Rosa antico */
+            color: #B27777; /* Colore del testo principale: Rosa antico */
             line-height: 1.6;
             position: relative; /* Necessario per posizionamento assoluto se aggiungiamo elementi */
             overflow-x: hidden; /* Evita scroll orizzontale */
@@ -25,24 +25,23 @@
             padding: 20px;
         }
 
-        
-   header {
-    background-image: url('http://googleusercontent.com/image_generation_content/8'); /* ASSICURATI CHE L'URL SIA ESATTO */
-    background-size: cover; /* L'immagine coprirà l'intera area dell'header */
-    background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
-    background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
-    padding: 2rem;
-    text-align: center;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-height: 300px; /* **MOLTO IMPORTANTE**: Assicura un'altezza minima per visualizzare bene l'immagine */
-    display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
-    align-items: center; /* Centra verticalmente il contenuto */
-    justify-content: center; /* Centra orizzontalmente il contenuto */
-    flex-direction: column; /* Imposta la direzione dei flex item in colonna */
-    /* Assicurati che NON ci sia un background-color che possa coprire l'immagine */
-    /* background-color: transparent; <-- Se hai un colore di sfondo, prova a metterlo trasparente o rimuovilo */
-}
+        header {
+            background-image: url('http://googleusercontent.com/image_generation_content/8'); /* ASSICURATI CHE L'URL SIA ESATTO */
+            background-size: cover; /* L'immagine coprirà l'intera area dell'header */
+            background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
+            background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-height: 300px; /* **MOLTO IMPORTANTE**: Assicura un'altezza minima per visualizzare bene l'immagine */
+            display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
+            align-items: center; /* Centra verticalmente il contenuto */
+            justify-content: center; /* Centra orizzontalmente il contenuto */
+            flex-direction: column; /* Imposta la direzione dei flex item in colonna */
+            /* Assicurati che NON ci sia un background-color che possa coprire l'immagine */
+            /* background-color: transparent; <-- Se hai un colore di sfondo, prova a metterlo trasparente o rimuovilo */
+        }
         header h1 {
             font-family: 'Great Vibes', cursive; /* Font per l'intestazione H1 */
             font-size: 3.5rem; /* Dimensione grande per l'intestazione principale */
@@ -57,20 +56,21 @@
             margin-top: 0.5rem;
         }
 
+        /* MODIFICHE QUI: sezione */
         section {
             background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per le sezioni */
             padding: 2rem;
             margin: 2rem auto; /* Margine sopra e sotto, centrato */
             border-radius: 15px; /* Angoli arrotondati per le sezioni */
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            max-width: 600px; /* Larghezza delle schede (puoi modificarla ulteriormente) */
+            width: 90%; /* Occupano il 90% della larghezza del loro contenitore (il body) */
+            max-width: 600px; /* Ma non superano mai i 600px */
         }
-        
+
         /* Stile specifico per centrare la sezione programma */
         #programma {
             text-align: center; /* Centra tutto il contenuto della sezione programma */
         }
-
 
         h3 {
             font-family: 'Montserrat', sans-serif; /* Font per i titoli H3 */
@@ -93,14 +93,15 @@
             /* color: #8C5A5A; */ /* Opzionale: un colore diverso per risaltare, se lo desideri */
         }
 
+        /* MODIFICHE QUI: footer */
         footer {
             background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per footer */
             text-align: center;
-            padding: 0.3rem;
+            padding: 0.8rem; /* Riduci il padding, ad esempio da 1.5rem a 0.8rem */
             font-size: 0.9rem;
             color: #B27777; /* Colore rosa antico per il footer */
             border-radius: 15px 15px 0 0; /* Angoli arrotondati solo in alto */
-            margin-top: 0.5rem;
+            margin-top: 0.5rem; /* Ridotto anche il margine superiore per avvicinarlo alle sezioni */
             box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
         }
 
@@ -139,7 +140,7 @@
             background-color: #F0F0F0; /* Sfondo opzioni del select leggermente diverso */
             color: #B27777; /* Testo opzioni del select rosa antico */
         }
-        
+
         /* Stili specifici per i checkbox/radio (preferenze menù) */
         .menu-options-group {
             border: 1px solid rgba(178, 119, 119, 0.3); /* Bordo leggero per raggruppare le opzioni del menù */
@@ -174,7 +175,6 @@
             margin-bottom: 0.2rem;
             color: #B27777;
         }
-
 
         form button {
             background-color: #B27777; /* Pulsante del form: colore rosa antico */
@@ -253,10 +253,10 @@
         }
 
         .gift-section strong {
-                font-size: 1.4rem;
-                display: block; /* Metti l'IBAN su una nuova riga */
-                margin-top: 1rem;
-            }
+            font-size: 1.4rem;
+            display: block; /* Metti l'IBAN su una nuova riga */
+            margin-top: 1rem;
+        }
 
         /* --- */
         /* Media Queries per Ottimizzazione Responsive */
@@ -272,10 +272,12 @@
                 font-size: 1.2rem; /* Riduci la dimensione di H2 */
             }
 
+            /* MODIFICHE QUI: sezione nelle media queries */
             section {
                 padding: 1.5rem; /* Riduci il padding delle sezioni */
                 margin: 1.5rem auto; /* Riduci il margine verticale */
-                max-width: 90%; /* Occupa più larghezza su schermi piccoli */
+                width: 90%; /* Occupa il 90% della larghezza dello schermo */
+                max-width: 500px; /* Riduci max-width per tablet */
             }
 
             h3 {
@@ -301,11 +303,13 @@
                 font-size: 1rem; /* Dimensione minima per H2 */
             }
 
+            /* MODIFICHE QUI: sezione nelle media queries */
             section {
                 padding: 1rem; /* Padding ancora più ridotto */
                 margin: 1rem auto; /* Margine ancora più ridotto */
                 border-radius: 10px; /* Angoli leggermente più piccoli */
-                max-width: 95%; /* Occupa quasi tutta la larghezza dello schermo */
+                width: 95%; /* Occupa quasi tutta la larghezza dello schermo */
+                max-width: none; /* Annulla il max-width precedente se non serve */
             }
 
             h3 {
@@ -334,14 +338,14 @@
             <p><span class="big-word"><strong>Sabato 13 settembre 2025</strong></span></p>
             <p>presso </p>
             <p><span class="big-word"><strong>Du Lac et du Parc Grand Resort</strong></span></p>
-            <p>Riva del Garda (viale Rovereto, 44 - Riva del Garda)</p>    
+            <p>Riva del Garda (viale Rovereto, 44 - Riva del Garda)</p>
             <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale!</p>
         </section>
 
         <section id="rsvp">
             <h3>Conferma la Tua Presenza</h3>
             <p>Ti preghiamo di compilare il modulo seguente per confermare la tua presenza. Ti ringraziamo!</p>
-            
+
             <form action="https://formspree.io/f/mrbqvjgn" method="POST">
                 <label for="full_name">Nome e Cognome:</label>
                 <input type="text" id="full_name" name="Nome_Cognome" required placeholder="Es. Mario Rossi">
@@ -350,8 +354,8 @@
                 <input type="number" id="num_guests" name="Numero_Invitati" min="1" value="1" required>
 
                 <div id="menuPreferencesContainer">
-                    </div>
-                
+                </div>
+
                 <label for="allergies">Allergie o intolleranze alimentari:</label>
                 <textarea id="allergies" name="Allergie_Intolleranze" rows="4" placeholder="Es. Celiachia, lattosio, frutta secca..."></textarea>
 
@@ -363,13 +367,13 @@
         </section>
 
         <section id="regalo-nozze">
-    <h3>Regalo di Nozze</h3>
-    <p style="text-align: center;">Il regalo più bello sarà avervi con noi…<br> ma se volete aiutarci a inseguire il nostro <strong>sogno americano</strong><br>una spintarella verso la West Coast sarà più che apprezzata!<br>
-    Tra canyon mozzafiato, strade infinite e hamburger giganti, il vostro pensiero ci accompagnerà lungo ogni miglio.<br>
-    Qui sotto trovate il nostro IBAN, nascosto con grazia ma senza troppa vergogna. 😉</p>
-    <p style="text-align:center;"><strong>IBAN: IT26P080163532100000639848</strong></p>
-    <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
-</section>
+            <h3>Regalo di Nozze</h3>
+            <p style="text-align: center;">Il regalo più bello sarà avervi con noi…<br> ma se volete aiutarci a inseguire il nostro <strong>sogno americano</strong><br>una spintarella verso la West Coast sarà più che apprezzata!<br>
+            Tra canyon mozzafiato, strade infinite e hamburger giganti, il vostro pensiero ci accompagnerà lungo ogni miglio.<br>
+            Qui sotto trovate il nostro IBAN, nascosto con grazia ma senza troppa vergogna. 😉</p>
+            <p style="text-align:center;"><strong>IBAN: IT26P080163532100000639848</strong></p>
+            <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
+        </section>
 
         <section id="gallery">
             <h3>Gallery</h3>
@@ -396,7 +400,7 @@
             for (let i = 1; i <= numGuests; i++) {
                 const guestDiv = document.createElement('div');
                 guestDiv.className = 'guest-menu-preference';
-                
+
                 const guestLabel = document.createElement('p');
                 guestLabel.style.fontWeight = '600';
                 guestLabel.style.marginBottom = '0.5rem';
@@ -445,7 +449,6 @@
                 document.getElementById('menuPreferencesContainer').innerHTML = ''; // Pulisce se il valore non è valido
             }
         });
-
     </script>
 </body>
 </html>
