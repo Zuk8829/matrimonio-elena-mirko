@@ -119,17 +119,38 @@
         }
         
         /* Stili specifici per i checkbox/radio (preferenze menù) */
-        .checkbox-group label {
+        .menu-options-group {
+            border: 1px solid rgba(178, 119, 119, 0.3); /* Bordo leggero per raggruppare le opzioni del menù */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-option label {
             display: inline-block; /* Per mettere label e input sulla stessa riga */
             margin-right: 15px; /* Spazio tra le opzioni */
             margin-top: 0.5rem;
             font-weight: normal; /* Non grassetto per le opzioni */
         }
 
-        .checkbox-group input[type="checkbox"] {
-            display: inline-block; /* Per allineare il checkbox con la label */
-            width: auto; /* Annulla il width: 100% per i checkbox */
+        .menu-option input[type="radio"] { /* Cambiato da checkbox a radio per scelta singola per persona */
+            display: inline-block; /* Per allineare il radio button con la label */
+            width: auto; /* Annulla il width: 100% per i radio button */
             margin-right: 5px;
+        }
+        /* Stile per i gruppi dinamici di preferenze menù */
+        .guest-menu-preference {
+            background-color: rgba(255, 255, 255, 0.6); /* Sfondo leggermente più scuro per ogni ospite */
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(178, 119, 119, 0.2);
+        }
+        .guest-menu-preference label {
+            font-weight: normal; /* Le label interne non devono essere in grassetto */
+            margin-top: 0.5rem;
+            margin-bottom: 0.2rem;
+            color: #B27777;
         }
 
 
@@ -305,21 +326,9 @@
                 <label for="num_guests">Numero di persone (incluso te):</label>
                 <input type="number" id="num_guests" name="Numero_Invitati" min="1" value="1" required>
 
-                <p style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Preferenze nel menù:</p>
-                <div class="checkbox-group">
-                    <label>
-                        <input type="checkbox" name="Menu_Carne" value="Si_Carne"> Carne
-                    </label>
-                    <label>
-                        <input type="checkbox" name="Menu_Pesce" value="Si_Pesce"> Pesce
-                    </label>
-                    <label>
-                        <input type="checkbox" name="Menu_Vegano" value="Si_Vegano"> Vegano
-                    </label>
-                </div>
-                <p style="font-size: 0.85rem; color: #8C5A5A; margin-top: 0.5rem;">Se più persone partecipano con preferenze diverse, specifica nelle note.</p>
-
-
+                <div id="menuPreferencesContainer">
+                    </div>
+                
                 <label for="allergies">Allergie o intolleranze alimentari:</label>
                 <textarea id="allergies" name="Allergie_Intolleranze" rows="4" placeholder="Es. Celiachia, lattosio, frutta secca..."></textarea>
 
@@ -340,7 +349,7 @@
         <section id="gallery">
             <h3>Gallery</h3>
             <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
-            </section>
+        </section>
     </main>
 
     <footer>
@@ -348,5 +357,70 @@
             <p>&copy; 13/09/2025 Mirko & Elena</p>
         </div>
     </footer>
+
+    <script>
+        // Funzione per generare i campi delle preferenze menù
+        function generateMenuPreferences(numGuests) {
+            const container = document.getElementById('menuPreferencesContainer');
+            container.innerHTML = ''; // Pulisce i campi precedenti
+
+            if (numGuests < 1) return; // Non generare nulla se il numero è inferiore a 1
+
+            const menuOptions = ['Carne', 'Pesce', 'Vegano'];
+
+            for (let i = 1; i <= numGuests; i++) {
+                const guestDiv = document.createElement('div');
+                guestDiv.className = 'guest-menu-preference';
+                
+                const guestLabel = document.createElement('p');
+                guestLabel.style.fontWeight = '600';
+                guestLabel.style.marginBottom = '0.5rem';
+                guestLabel.textContent = `Preferenza menù per invitato ${i}:`;
+                guestDiv.appendChild(guestLabel);
+
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'menu-options-group'; // Usa la classe per il raggruppamento
+
+                menuOptions.forEach(option => {
+                    const label = document.createElement('label');
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = `Menu_Invitato_${i}`; // Nome unico per ogni invitato
+                    input.value = option;
+                    input.required = true; // Rende la selezione obbligatoria per ogni invitato
+
+                    label.appendChild(input);
+                    label.appendChild(document.createTextNode(` ${option}`));
+                    optionsDiv.appendChild(label);
+                });
+                guestDiv.appendChild(optionsDiv);
+                container.appendChild(guestDiv);
+            }
+        }
+
+        // Seleziona il campo input del numero di persone
+        const numGuestsInput = document.getElementById('num_guests');
+
+        // Genera i campi menù all'avvio della pagina (per il valore iniziale di 1)
+        generateMenuPreferences(parseInt(numGuestsInput.value));
+
+        // Aggiungi un "listener" per quando il valore del campo cambia
+        numGuestsInput.addEventListener('change', (event) => {
+            const currentNumGuests = parseInt(event.target.value);
+            generateMenuPreferences(currentNumGuests);
+        });
+
+        // Opzionale: Aggiungi un listener anche per input per un'esperienza più reattiva (mentre l'utente digita)
+        numGuestsInput.addEventListener('input', (event) => {
+            const currentNumGuests = parseInt(event.target.value);
+            // Evita di generare rapidamente se il valore è ancora incompleto o non valido
+            if (!isNaN(currentNumGuests) && currentNumGuests >= 1) {
+                generateMenuPreferences(currentNumGuests);
+            } else if (isNaN(currentNumGuests) || currentNumGuests < 1) {
+                document.getElementById('menuPreferencesContainer').innerHTML = ''; // Pulisce se il valore non è valido
+            }
+        });
+
+    </script>
 </body>
 </html>
