@@ -206,28 +206,25 @@
         }
 
         .action-button {
-        background-color: #B27777;
-        color: white;
-        border: none;
-        cursor: pointer;
-        /* Aumentiamo il padding verticale e orizzontale */
-        padding: 1.2rem 2.5rem; /* Aumentato il padding per renderlo più grande */
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        display: block;
-        width: 100%;
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        /* Aumentiamo la dimensione del font, simile a un h3 ma non uguale per mantenere gerarchia */
-        font-size: 1.8rem; /* Aumentato il font-size */
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
+            background-color: #B27777;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 1.2rem 2.5rem; /* Aumentato il padding per renderlo più grande */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem; /* Aumentato il font-size */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
 
-    .action-button:hover {
-        background-color: #A06060;
-        transform: translateY(-2px);
-    }
+        .action-button:hover {
+            background-color: #A06060;
+            transform: translateY(-2px);
         }
 
         .program-timeline {
@@ -330,9 +327,10 @@
                 width: 95%;
             }
 
+            /* Modifiche per il pulsante Conferma per schermi < 769px */
             .action-button {
-                font-size: 0.9rem;
-                padding: 0.7rem 1.2rem;
+                font-size: 1.4rem; /* Dimensione del font adattata per tablet */
+                padding: 1rem 1.8rem; /* Padding adattato per tablet */
             }
         }
 
@@ -370,9 +368,10 @@
                 padding: 0.6rem 0.8rem;
             }
 
+            /* Modifiche per il pulsante Conferma per schermi < 480px */
             .action-button {
-                font-size: 0.8rem;
-                padding: 0.6rem 1rem;
+                font-size: 1.2rem; /* Dimensione del font adattata per mobile */
+                padding: 0.8rem 1.5rem; /* Padding adattato per mobile */
             }
         }
 
