@@ -19,6 +19,11 @@
             overflow-x: hidden; /* Evita scroll orizzontale */
         }
 
+        /* Aggiungiamo box-sizing universale per un migliore controllo del layout */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         .container {
             max-width: 960px; /* Larghezza massima per il contenitore generale (header/footer) */
             margin: 0 auto;
@@ -56,15 +61,15 @@
             margin-top: 0.5rem;
         }
 
-        /* MODIFICHE QUI: sezione */
+        /* MODIFICHE CHIAVE QUI PER LE SEZIONI */
         section {
             background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per le sezioni */
-            padding: 2rem;
+            padding: 2rem; /* Padding base */
             margin: 2rem auto; /* Margine sopra e sotto, centrato */
             border-radius: 15px; /* Angoli arrotondati per le sezioni */
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            width: 90%; /* Occupano il 90% della larghezza del loro contenitore (il body) */
-            max-width: 600px; /* Ma non superano mai i 600px */
+            width: 90%; /* Occupa il 90% della larghezza disponibile */
+            max-width: 600px; /* Ma non supera mai i 600px */
         }
 
         /* Stile specifico per centrare la sezione programma */
@@ -93,7 +98,6 @@
             /* color: #8C5A5A; */ /* Opzionale: un colore diverso per risaltare, se lo desideri */
         }
 
-        /* MODIFICHE QUI: footer */
         footer {
             background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per footer */
             text-align: center;
@@ -120,7 +124,7 @@
         form textarea,
         form select {
             display: block;
-            width: calc(100% - 20px); /* Regola la larghezza tenendo conto del padding */
+            width: 100%; /* Lascialo al 100% perché il padding sarà incluso grazie a box-sizing */
             margin-top: 0.5rem;
             margin-bottom: 1.5rem;
             padding: 0.75rem 10px; /* Aggiunto padding orizzontale */
@@ -272,7 +276,6 @@
                 font-size: 1.2rem; /* Riduci la dimensione di H2 */
             }
 
-            /* MODIFICHE QUI: sezione nelle media queries */
             section {
                 padding: 1.5rem; /* Riduci il padding delle sezioni */
                 margin: 1.5rem auto; /* Riduci il margine verticale */
@@ -303,13 +306,13 @@
                 font-size: 1rem; /* Dimensione minima per H2 */
             }
 
-            /* MODIFICHE QUI: sezione nelle media queries */
             section {
+                /* Ridotto ulteriormente il padding per dare più spazio al width */
                 padding: 1rem; /* Padding ancora più ridotto */
                 margin: 1rem auto; /* Margine ancora più ridotto */
                 border-radius: 10px; /* Angoli leggermente più piccoli */
-                width: 95%; /* Occupa quasi tutta la larghezza dello schermo */
-                max-width: none; /* Annulla il max-width precedente se non serve */
+                width: 90%; /* Mantenuto 90% per lasciare un margine visibile */
+                max-width: none; /* Annulla il max-width precedente */
             }
 
             h3 {
@@ -318,6 +321,15 @@
 
             p, li {
                 font-size: 0.9rem; /* Dimensione base per il testo su smartphone */
+            }
+
+            /* Rivedere gli input del form se continuano ad essere troppo larghi */
+            form input[type="text"],
+            form input[type="email"],
+            form input[type="number"],
+            form textarea,
+            form select {
+                padding: 0.75rem; /* Potresti voler rimuovere il padding orizzontale extra */
             }
         }
     </style>
