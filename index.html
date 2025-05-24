@@ -26,22 +26,23 @@
         }
 
         
-    header {
-        background-image: url('http://googleusercontent.com/image_generation_content/8'); /* QUESTO È IL LINK ALLA TUA IMMAGINE DI SFONDO */
-        background-size: cover; /* L'immagine coprirà l'intera area dell'header */
-        background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
-        background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
-        padding: 2rem;
-        text-align: center;
-        border-radius: 0 0 15px 15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        min-height: 300px; /* Altezza minima per visualizzare bene l'immagine */
-        display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
-        align-items: center; /* Centra verticalmente il contenuto */
-        justify-content: center; /* Centra orizzontalmente il contenuto */
-        flex-direction: column; /* Imposta la direzione dei flex item in colonna */
-    }
-
+   header {
+    background-image: url('http://googleusercontent.com/image_generation_content/8'); /* ASSICURATI CHE L'URL SIA ESATTO */
+    background-size: cover; /* L'immagine coprirà l'intera area dell'header */
+    background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
+    background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 300px; /* **MOLTO IMPORTANTE**: Assicura un'altezza minima per visualizzare bene l'immagine */
+    display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
+    align-items: center; /* Centra verticalmente il contenuto */
+    justify-content: center; /* Centra orizzontalmente il contenuto */
+    flex-direction: column; /* Imposta la direzione dei flex item in colonna */
+    /* Assicurati che NON ci sia un background-color che possa coprire l'immagine */
+    /* background-color: transparent; <-- Se hai un colore di sfondo, prova a metterlo trasparente o rimuovilo */
+}
         header h1 {
             font-family: 'Great Vibes', cursive; /* Font per l'intestazione H1 */
             font-size: 3.5rem; /* Dimensione grande per l'intestazione principale */
