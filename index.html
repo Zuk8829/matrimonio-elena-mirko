@@ -53,15 +53,21 @@
             margin: 2rem auto; /* Margine sopra e sotto, centrato */
             border-radius: 15px; /* Angoli arrotondati per le sezioni */
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            text-align: justify; /* Testo giustificato nelle sezioni */
+            /* RIMOSSO text-align: justify; DA QUI per evitare conflitti */
             max-width: 600px; /* Larghezza delle schede (puoi modificarla ulteriormente) */
         }
+        
+        /* Stile specifico per centrare la sezione programma */
+        #programma {
+            text-align: center; /* Centra tutto il contenuto della sezione programma */
+        }
+
 
         h3 {
             font-family: 'Montserrat', sans-serif; /* Font per i titoli H3 */
             font-size: 2rem;
             color: #B27777; /* Colore rosa antico per i titoli H3 */
-            text-align: center;
+            text-align: center; /* Mantenuto per i titoli H3 */
             margin-top: 0;
             margin-bottom: 1.5rem;
         }
@@ -231,10 +237,10 @@
         }
 
         .gift-section strong {
-            font-size: 1.4rem;
-            display: block; /* Metti l'IBAN su una nuova riga */
-            margin-top: 1rem;
-        }
+                font-size: 1.4rem;
+                display: block; /* Metti l'IBAN su una nuova riga */
+                margin-top: 1rem;
+            }
 
         /* --- */
         /* Media Queries per Ottimizzazione Responsive */
@@ -308,11 +314,10 @@
         <section id="programma">
             <h3>Programma della giornata</h3>
             <p>Sì, è tutto vero… ci sposiamo! 🎉</p>
-            <p>Dopo 6423 giorni di Amore… abbiamo deciso che è arrivato il momento di fare il grande passo</p>
-            <p>(quello con l’abito elegante e le scarpe un po’ scomode)</p>
+            <p>Dopo 6423 giorni di Amore… abbiamo deciso che è arrivato il momento di fare il grande passo<br>(quello con l’abito elegante e le scarpe un po’ scomode).</p>
             <p>La cerimonia ed il ricevimento si svolgeranno Sabato 13 settembre 2025 presso</p>
             <p><strong>Du Lac et du Parc Grand Resort</strong> di Riva del Garda (viale Rovereto, 44 - Riva del Garda)</p>
-            <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale</p>
+            <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale.</p>
         </section>
 
         <section id="rsvp">
@@ -332,7 +337,7 @@
                 <label for="allergies">Allergie o intolleranze alimentari:</label>
                 <textarea id="allergies" name="Allergie_Intolleranze" rows="4" placeholder="Es. Celiachia, lattosio, frutta secca..."></textarea>
 
-                <label for="message">Note aggiuntive:</label>
+                <label for="message">Note aggiuntive (es. preferenze menù per altri invitati, seggioloni, ecc.):</label>
                 <textarea id="message" name="Note_Aggiuntive" rows="4" placeholder="Scrivi qui eventuali richieste speciali o dettagli aggiuntivi."></textarea>
 
                 <button type="submit">Invia conferma</button>
