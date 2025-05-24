@@ -26,11 +26,19 @@
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per header */
+            background-image: url('img/header-background.jpg'); /* Qui indichi il percorso e il nome dell'immagine */
+            background-size: cover; /* L'immagine coprirà l'intera area dell'header */
+            background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
+            background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
             padding: 2rem;
             text-align: center;
-            border-radius: 0 0 15px 15px; /* Angoli arrotondati solo in basso */
+            border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-height: 300px; /* Altezza minima per visualizzare bene l'immagine */
+            display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
+            align-items: center; /* Centra verticalmente il contenuto */
+            justify-content: center; /* Centra orizzontalmente il contenuto */
+            flex-direction: column; /* Imposta la direzione dei flex item in colonna */
         }
 
         header h1 {
