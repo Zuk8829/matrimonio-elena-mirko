@@ -32,7 +32,7 @@
         }
 
         header {
-            background-image: url('http://googleusercontent.com/image_generation_content/8'); /* ASSICURATI CHE L'URL SIA ESATTO */
+            background-image: url('IMG-20240922-WA0011.jpg'); /* ASSICURATI CHE L'URL SIA ESATTO - Ho usato il nome del file caricato */
             background-size: cover; /* L'immagine coprirà l'intera area dell'header */
             background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
             background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
@@ -75,9 +75,15 @@
             display: none;
         }
 
-        /* Stile specifico per centrare la sezione programma */
-        #programma {
-            text-align: center; /* Centra tutto il contenuto della sezione programma */
+        /* Stile specifico per centrare le sezioni */
+        #programma, #regalo-nozze, #gallery, #rsvp-button-container {
+            text-align: center; /* Centra tutto il contenuto */
+        }
+        /* Stile per il contenitore del pulsante RSVP per centrarlo */
+        #rsvp-button-container {
+            margin: 2rem auto; /* Uguale margine delle sezioni */
+            width: 90%;
+            max-width: 600px;
         }
 
         h3 {
@@ -368,10 +374,27 @@
             <p><span class="big-word"><strong>Du Lac et du Parc Grand Resort</strong></span></p>
             <p>Riva del Garda<BR>(viale Rovereto, 44 - Riva del Garda)</p>
             <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale!</p>
-            <button id="showRsvpButton" class="action-button">Conferma la Tua Presenza</button> 
         </section>
 
+            </section>
+
+        <section id="regalo-nozze">
+            <h3>Regalo di Nozze</h3>
+            <p style="text-align: center;">Il regalo più bello sarà avervi con noi…<br> ma se volete aiutarci a inseguire il nostro <strong>sogno americano</strong><br>una spintarella verso la West Coast sarà più che apprezzata!<br>
+            Tra canyon mozzafiato, strade infinite e hamburger giganti, il vostro pensiero ci accompagnerà lungo ogni miglio.<br>
+            Qui sotto trovate il nostro IBAN, nascosto con grazia ma senza troppa vergogna. 😉</p>
+            <p style="text-align:center;"><strong>IBAN: IT26P080163532100000639848</strong></p>
+            <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
         </section>
+
+        <section id="gallery">
+            <h3>Gallery</h3>
+            <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
+        </section>
+
+        <div id="rsvp-button-container">
+             <button id="showRsvpButton" class="action-button">Conferma la Tua Presenza</button>
+        </div>
 
         <section id="rsvp">
             <h3>Conferma la Tua Presenza</h3>
@@ -396,25 +419,10 @@
                 <button type="submit">Invia conferma</button>
             </form>
         </section>
-
-        <section id="regalo-nozze">
-            <h3>Regalo di Nozze</h3>
-            <p style="text-align: center;">Il regalo più bello sarà avervi con noi…<br> ma se volete aiutarci a inseguire il nostro <strong>sogno americano</strong><br>una spintarella verso la West Coast sarà più che apprezzata!<br>
-            Tra canyon mozzafiato, strade infinite e hamburger giganti, il vostro pensiero ci accompagnerà lungo ogni miglio.<br>
-            Qui sotto trovate il nostro IBAN, nascosto con grazia ma senza troppa vergogna. 😉</p>
-            <p style="text-align:center;"><strong>IBAN: IT26P080163532100000639848</strong></p>
-            <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
-        </section>
-
-        <section id="gallery">
-            <h3>Gallery</h3>
-            <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
-        </section>
     </main>
 
     <footer>
         <div class="container">
-            <button id="showRsvpButton" class="action-button">Conferma la Tua Presenza</button> 
             <p>&copy; 13/09/2025 Mirko & Elena</p>
         </div>
     </footer>
@@ -478,6 +486,9 @@
             // Genera le preferenze del menù per il numero iniziale di ospiti (di solito 1)
             // Questo è importante perché la sezione RSVP è nascosta all'inizio
             generateMenuPreferences(parseInt(numGuestsInput.value));
+
+            // (Opzionale) Puoi nascondere il pulsante "Conferma la Tua Presenza" dopo che è stato cliccato
+            // showRsvpButton.style.display = 'none';
         });
 
         // Aggiungi un "listener" per quando il valore del campo cambia
