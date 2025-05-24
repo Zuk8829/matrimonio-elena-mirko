@@ -11,14 +11,42 @@
         /* Stili CSS globali */
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif; /* Font per tutti i testi */
-            background-color: #b6C1ad; /* Sfondo verde salvia - il tuo colore aggiornato */
-            color: #B27777; /* Colore del testo principale: Rosa antico */
+            font-family: 'Montserrat', sans-serif;
+            background-color: #b6C1ad;
+            color: #B27777;
             line-height: 1.6;
-            position: relative; /* Necessario per posizionamento assoluto se aggiungiamo elementi */
-            overflow-x: hidden; /* Evita scroll orizzontale */
-            scroll-behavior: smooth; /* Per lo scroll fluido */
+            position: relative;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            /* Inizialmente visibile per schermi piccoli (mobile first) */
+            display: block; /* Aggiunto esplicitamente per chiarezza */
         }
+
+        /* Nascondi il contenuto del body e mostra il messaggio per desktop */
+        .desktop-message-container {
+            display: none; /* Inizialmente nascosto per mobile */
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #B27777;
+            font-size: 1.2rem;
+            height: 100vh; /* Occupa tutta l'altezza dello schermo */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* MEDIA QUERY: NASCONDI IL SITO E MOSTRA MESSAGGIO SOLO SU SCHERMI LARGHI (PC) */
+        @media screen and (min-width: 769px) { /* Puoi usare un breakpoint diverso, es. 960px */
+            body {
+                display: none; /* Nasconde tutto il contenuto del body su schermi larghi */
+            }
+            .desktop-message-container {
+                display: flex; /* Mostra il messaggio per desktop */
+            }
+        }
+
 
         /* Aggiungiamo box-sizing universale per un migliore controllo del layout */
         *, *::before, *::after {
@@ -26,114 +54,114 @@
         }
 
         .container {
-            max-width: 960px; /* Larghezza massima per il contenitore generale (header/footer) */
+            max-width: 960px;
             margin: 0 auto;
             padding: 20px;
         }
 
         header {
-            background-image: url('img/IMG-20240922-WA0011.jpg'); /* ASSICURATI CHE L'URL SIA ESATTO - Ho usato il nome del file caricato */
-            background-size: cover; /* L'immagine coprirà l'intera area dell'header */
-            background-position: bottom center; /* Posiziona l'immagine in basso e centrata */
-            background-repeat: no-repeat; /* Impedisce all'immagine di ripetersi */
+            background-image: url('IMG-20240922-WA0011.jpg'); /* ASSICURATI CHE L'URL SIA ESATTO */
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
             padding: 2rem;
             text-align: center;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            min-height: 200px; /* **MOLTO IMPORTANTE**: Assicura un'altezza minima per visualizzare bene l'immagine */
-            display: flex; /* Usato flexbox per centrare il contenuto verticalmente */
-            align-items: center; /* Centra verticalmente il contenuto */
-            justify-content: center; /* Centra orizzontalmente il contenuto */
-            flex-direction: column; /* Imposta la direzione dei flex item in colonna */
+            min-height: 200px; /* Altezza minima per mobile */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            white-space: nowrap; /* Per la scritta Elena/Mirko */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Opzionale */
         }
-/* --- INCOLLA QUI LA SEZIONE CHE TI HO FORNITO --- */
-    @media screen and (min-width: 960px) {
-        header {
-            min-height: 400px; /* Altezza maggiore per desktop/tablet */
+
+        /* Media Query per schermi desktop e tablet grandi */
+        @media screen and (min-width: 769px) {
+            header {
+                min-height: 400px; /* Altezza maggiore per desktop/tablet */
+            }
         }
-    }
-    /* --- FINE INCOLLATURA --- */
+
         header h1 {
-            font-family: 'Great Vibes', cursive; /* Font per l'intestazione H1 */
-            font-size: 3.5rem; /* Dimensione grande per l'intestazione principale */
-            color: #B27777; /* Colore rosa antico per l'intestazione */
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #B27777;
             margin: 0;
-            white-space: nowrap; /* Impedisce al testo di andare a capo */
-            overflow: hidden;     /* Nasconde il contenuto che eccede i bordi */
-            text-overflow: ellipsis; /* Aggiunge "..." se il testo viene tagliato (opzionale) */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         header h2 {
-            font-family: 'Montserrat', sans-serif; /* Font per la sotto-intestazione H2 */
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
-            color: #B27777; /* Colore rosa antico */
+            color: #B27777;
             margin-top: 0.5rem;
         }
 
         section {
-            background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per le sezioni */
-            padding: 2rem; /* Padding base */
-            margin: 2rem auto; /* Margine sopra e sotto, centrato */
-            border-radius: 15px; /* Angoli arrotondati per le sezioni */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            width: 90%; /* Occupa il 90% della larghezza disponibile */
-            max-width: 600px; /* Ma non supera mai i 600px */
+            width: 90%;
+            max-width: 600px;
         }
 
-        /* Nascondi la sezione RSVP di default */
         #rsvp {
             display: none;
         }
 
-        /* Stile specifico per centrare le sezioni */
         #programma, #regalo-nozze, #gallery, #rsvp-button-container {
-            text-align: center; /* Centra tutto il contenuto */
+            text-align: center;
         }
-        /* Stile per il contenitore del pulsante RSVP per centrarlo */
+
         #rsvp-button-container {
-            margin: 2rem auto; /* Uguale margine delle sezioni */
+            margin: 2rem auto;
             width: 90%;
             max-width: 600px;
         }
 
         h3 {
-            font-family: 'Montserrat', sans-serif; /* Font per i titoli H3 */
+            font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
-            color: #B27777; /* Colore rosa antico per i titoli H3 */
-            text-align: center; /* Mantenuto per i titoli H3 */
+            color: #B27777;
+            text-align: center;
             margin-top: 0;
             margin-bottom: 1.5rem;
         }
 
         p, li {
-            font-family: 'Montserrat', sans-serif; /* Assicura che anche p e li usino Montserrat */
-            color: #B27777; /* Colore rosa antico per paragrafi e liste */
+            font-family: 'Montserrat', sans-serif;
+            color: #B27777;
         }
 
-        /* Stile per parole evidenziate */
         .big-word {
-            font-size: 1.2em; /* La parola sarà il 20% più grande del testo circostante */
-            font-weight: bold; /* Opzionale: per renderla anche in grassetto */
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
         footer {
-            background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente per footer */
+            background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
-            padding: 0.8rem; /* Riduci il padding, ad esempio da 1.5rem a 0.8rem */
+            padding: 0.8rem;
             font-size: 0.9rem;
-            color: #B27777; /* Colore rosa antico per il footer */
-            border-radius: 15px 15px 0 0; /* Angoli arrotondati solo in alto */
-            margin-top: 0.5rem; /* Ridotto anche il margine superiore per avvicinarlo alle sezioni */
+            color: #B27777;
+            border-radius: 15px 15px 0 0;
+            margin-top: 0.5rem;
             box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
         }
 
-        /* Stili per form (RSVP) */
         form label {
             display: block;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
             color: #B27777;
-            font-weight: 600; /* Rendi le label più in evidenza */
+            font-weight: 600;
         }
 
         form input[type="text"],
@@ -142,40 +170,39 @@
         form textarea,
         form select {
             display: block;
-            width: 100%; /* Lascialo al 100% perché il padding sarà incluso grazie a box-sizing */
+            width: 100%;
             margin-top: 0.5rem;
             margin-bottom: 1.5rem;
-            padding: 0.75rem 10px; /* Aggiunto padding orizzontale */
+            padding: 0.75rem 10px;
             font-size: 1rem;
-            border: 1px solid rgba(178, 119, 119, 0.5); /* Bordo con tonalità rosa antico */
+            border: 1px solid rgba(178, 119, 119, 0.5);
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.7); /* Sfondo input più opaco per leggibilità */
-            color: #B27777; /* Testo input rosa antico */
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #B27777;
         }
 
         form input::placeholder,
         form textarea::placeholder {
-            color: rgba(178, 119, 119, 0.8); /* Colore placeholder rosa antico più chiaro */
+            color: rgba(178, 119, 119, 0.8);
         }
 
         form select option {
-            background-color: #F0F0F0; /* Sfondo opzioni del select leggermente diverso */
-            color: #B27777; /* Testo opzioni del select rosa antico */
+            background-color: #F0F0F0;
+            color: #B27777;
         }
 
-        /* Stili specifici per i checkbox/radio (preferenze menù) */
         .menu-options-group {
-            border: 1px solid rgba(178, 119, 119, 0.3); /* Bordo leggero per raggruppare le opzioni del menù */
+            border: 1px solid rgba(178, 119, 119, 0.3);
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 1.5rem;
         }
 
         .menu-option label {
-            display: inline-block; /* Per mettere label e input sulla stessa riga */
-            margin-right: 15px; /* Spazio tra le opzioni */
+            display: inline-block;
+            margin-right: 15px;
             margin-top: 0.5rem;
-            font-weight: normal; /* Non grassetto per le opzioni */
+            font-weight: normal;
         }
 
         .menu-option input[type="radio"] {
@@ -183,14 +210,15 @@
             width: auto;
             margin-right: 5px;
         }
-        /* Stile per i gruppi dinamici di preferenze menù */
+
         .guest-menu-preference {
-            background-color: rgba(255, 255, 255, 0.6); /* Sfondo leggermente più scuro per ogni ospite */
+            background-color: rgba(255, 255, 255, 0.6);
             padding: 10px 15px;
             border-radius: 8px;
             margin-bottom: 1rem;
             border: 1px solid rgba(178, 119, 119, 0.2);
         }
+
         .guest-menu-preference label {
             font-weight: normal;
             margin-top: 0.5rem;
@@ -198,7 +226,6 @@
             color: #B27777;
         }
 
-        /* Stile generale per i bottoni di azione (es. Conferma presenza, Invia conferma) */
         .action-button {
             background-color: #B27777;
             color: white;
@@ -207,13 +234,13 @@
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            display: block; /* Modificato: display block per occupare tutta la larghezza */
-            width: 100%; /* Nuovo: Occupare il 100% della larghezza del contenitore */
+            display: block;
+            width: 100%;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
-            margin-top: 2rem; /* Aggiungi un po' di spazio sopra il bottone */
-            margin-bottom: 1rem; /* Aggiungi un po' di spazio sotto il bottone */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
         }
 
         .action-button:hover {
@@ -221,7 +248,6 @@
             transform: translateY(-2px);
         }
 
-        /* Stili per la sezione Programma della giornata */
         .program-timeline {
             display: flex;
             flex-direction: column;
@@ -270,7 +296,6 @@
             z-index: 2;
         }
 
-        /* Stili per la sezione Regalo di Nozze */
         .gift-section {
             text-align: center;
         }
@@ -286,55 +311,42 @@
             margin-top: 1rem;
         }
 
-        /* --- */
         /* Media Queries per Ottimizzazione Responsive */
-        /* --- */
-
-        /* Stili per schermi fino a 768px (tablet e smartphone più grandi) */
         @media screen and (max-width: 768px) {
             header h1 {
                 font-size: 2.8rem;
             }
-
             header h2 {
                 font-size: 1.2rem;
             }
-
             section {
                 padding: 1.5rem;
                 margin: 1.5rem auto;
                 width: 90%;
                 max-width: 500px;
             }
-
             h3 {
                 font-size: 1.8rem;
             }
-
             p, li {
                 font-size: 0.95rem;
             }
-
             .program-item {
                 width: 95%;
             }
-
             .action-button {
                 font-size: 0.9rem;
                 padding: 0.7rem 1.2rem;
             }
         }
 
-        /* Stili per schermi fino a 480px (smartphone) */
         @media screen and (max-width: 480px) {
             header h1 {
                 font-size: 2.2rem;
             }
-
             header h2 {
                 font-size: 1rem;
             }
-
             section {
                 padding: 1rem;
                 margin: 1rem auto;
@@ -342,15 +354,12 @@
                 width: 90%;
                 max-width: none;
             }
-
             h3 {
                 font-size: 1.5rem;
             }
-
             p, li {
                 font-size: 0.9rem;
             }
-
             form input[type="text"],
             form input[type="email"],
             form input[type="number"],
@@ -358,7 +367,6 @@
             form select {
                 padding: 0.6rem 0.8rem;
             }
-
             .action-button {
                 font-size: 0.8rem;
                 padding: 0.6rem 1rem;
@@ -367,26 +375,29 @@
     </style>
 </head>
 <body>
+    <div class="desktop-message-container">
+        <h1>Sito Ottimizzato per Smartphone</h1>
+        <p>Per una migliore esperienza, ti preghiamo di visualizzare questo sito dal tuo smartphone.</p>
+        <p>Inquadra il QR code sulla partecipazione per accedere direttamente.</p>
+    </div>
+
     <header>
         <div class="container">
-            <h1><span class="big-word">Mirko  &  Elena</span></h1>
+            <h1><span class="big-word">Elena<br>❤️<br> Mirko</span></h1>
         </div>
     </header>
 
     <main>
         <section id="programma">
-            <h3>CI SPOSIAMO!! 🎉</h3>
-            <p>Sì, è tutto vero… </p>
-            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
-            <p><span class="big-word"><strong>Siamo lieti di invitarvi<br>al nostro matrimonio</strong></span><br>❤️</p>
+            <h3>Programma della giornata</h3>
+            <p>Sì, è tutto vero… ci sposiamo! 🎉</p>
+            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento<br>di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
             <p>La cerimonia ed il ricevimento si svolgeranno </p>
             <p><span class="big-word"><strong>Sabato 13 settembre 2025</strong></span></p>
             <p>presso </p>
             <p><span class="big-word"><strong>Du Lac et du Parc Grand Resort</strong></span></p>
-            <p>Riva del Garda<BR>(viale Rovereto, 44 - Riva del Garda)</p>
+            <p>Riva del Garda (viale Rovereto, 44 - Riva del Garda)</p>
             <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale!</p>
-        </section>
-
         </section>
 
         <section id="regalo-nozze">
@@ -442,9 +453,9 @@
         // Funzione per generare i campi delle preferenze menù
         function generateMenuPreferences(numGuests) {
             const container = document.getElementById('menuPreferencesContainer');
-            container.innerHTML = ''; // Pulisce i campi precedenti
+            container.innerHTML = '';
 
-            if (numGuests < 1) return; // Non generare nulla se il numero è inferiore a 1
+            if (numGuests < 1) return;
 
             const menuOptions = ['Carne', 'Pesce', 'Vegano'];
 
@@ -459,15 +470,15 @@
                 guestDiv.appendChild(guestLabel);
 
                 const optionsDiv = document.createElement('div');
-                optionsDiv.className = 'menu-options-group'; // Usa la classe per il raggruppamento
+                optionsDiv.className = 'menu-options-group';
 
                 menuOptions.forEach(option => {
                     const label = document.createElement('label');
                     const input = document.createElement('input');
                     input.type = 'radio';
-                    input.name = `Menu_Invitato_${i}`; // Nome unico per ogni invitato
+                    input.name = `Menu_Invitato_${i}`;
                     input.value = option;
-                    input.required = true; // Rende la selezione obbligatoria per ogni invitato
+                    input.required = true;
 
                     label.appendChild(input);
                     label.appendChild(document.createTextNode(` ${option}`));
@@ -478,44 +489,27 @@
             }
         }
 
-        // Seleziona il campo input del numero di persone
         const numGuestsInput = document.getElementById('num_guests');
-
-        // Seleziona il pulsante per mostrare RSVP
         const showRsvpButton = document.getElementById('showRsvpButton');
-        // Seleziona la sezione RSVP
         const rsvpSection = document.getElementById('rsvp');
 
-        // Aggiungi un listener per il click sul pulsante "Conferma la Tua Presenza"
         showRsvpButton.addEventListener('click', () => {
-            // Rendi visibile la sezione RSVP
-            rsvpSection.style.display = 'block'; // Ora la sezione apparirà
-
-            // Scorri la pagina fino alla sezione RSVP
+            rsvpSection.style.display = 'block';
             rsvpSection.scrollIntoView({ behavior: 'smooth' });
-
-            // Genera le preferenze del menù per il numero iniziale di ospiti (di solito 1)
-            // Questo è importante perché la sezione RSVP è nascosta all'inizio
             generateMenuPreferences(parseInt(numGuestsInput.value));
-
-            // (Opzionale) Puoi nascondere il pulsante "Conferma la Tua Presenza" dopo che è stato cliccato
-            // showRsvpButton.style.display = 'none';
         });
 
-        // Aggiungi un "listener" per quando il valore del campo cambia
         numGuestsInput.addEventListener('change', (event) => {
             const currentNumGuests = parseInt(event.target.value);
             generateMenuPreferences(currentNumGuests);
         });
 
-        // Opzionale: Aggiungi un listener anche per input per un'esperienza più reattiva (mentre l'utente digita)
         numGuestsInput.addEventListener('input', (event) => {
             const currentNumGuests = parseInt(event.target.value);
-            // Evita di generare rapidamente se il valore è ancora incompleto o non valido
             if (!isNaN(currentNumGuests) && currentNumGuests >= 1) {
                 generateMenuPreferences(currentNumGuests);
             } else if (isNaN(currentNumGuests) || currentNumGuests < 1) {
-                document.getElementById('menuPreferencesContainer').innerHTML = ''; // Pulisce se il valore non è valido
+                document.getElementById('menuPreferencesContainer').innerHTML = '';
             }
         });
     </script>
