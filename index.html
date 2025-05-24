@@ -188,7 +188,7 @@
             color: #B27777;
         }
 
-        /* Stile generale per i bottoni di azione (es. Conferma presenza) */
+        /* Stile generale per i bottoni di azione (es. Conferma presenza, Invia conferma) */
         .action-button {
             background-color: #B27777;
             color: white;
@@ -197,12 +197,13 @@
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
+            display: block; /* Modificato: display block per occupare tutta la larghezza */
+            width: 100%; /* Nuovo: Occupare il 100% della larghezza del contenitore */
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 2rem; /* Aggiungi un po' di spazio sopra il bottone */
+            margin-bottom: 1rem; /* Aggiungi un po' di spazio sotto il bottone */
         }
 
         .action-button:hover {
@@ -376,7 +377,7 @@
             <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale!</p>
         </section>
 
-            </section>
+        </section>
 
         <section id="regalo-nozze">
             <h3>Regalo di Nozze</h3>
@@ -416,7 +417,7 @@
                 <label for="message">Note aggiuntive (es. preferenze menù per altri invitati, seggioloni, ecc.):</label>
                 <textarea id="message" name="Note_Aggiuntive" rows="4" placeholder="Scrivi qui eventuali richieste speciali o dettagli aggiuntivi."></textarea>
 
-                <button type="submit">Invia conferma</button>
+                <button type="submit" class="action-button">Invia conferma</button>
             </form>
         </section>
     </main>
