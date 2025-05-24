@@ -1,3 +1,7 @@
+Assolutamente! Ecco il codice HTML completo e aggiornato con tutte le ultime modifiche, inclusa la correzione della logica per la visualizzazione mobile/desktop e tutti gli stili e le funzionalità che abbiamo aggiunto finora.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -18,35 +22,23 @@
             position: relative;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            /* Inizialmente visibile per schermi piccoli (mobile first) */
-            display: block; /* Aggiunto esplicitamente per chiarezza */
+            /* Di default, su schermi piccoli (mobile) il body è VISIBILE */
+            display: block;
         }
 
-        /* Nascondi il contenuto del body e mostra il messaggio per desktop */
+        /* Questo div per il messaggio desktop è inizialmente NASCOSTO */
         .desktop-message-container {
-            display: none; /* Inizialmente nascosto per mobile */
+            display: none; /* Nascondilo su schermi mobili */
             text-align: center;
             padding: 50px;
             background-color: rgba(255, 255, 255, 0.9);
             color: #B27777;
             font-size: 1.2rem;
             height: 100vh; /* Occupa tutta l'altezza dello schermo */
-            display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Usiamo flex per centrare */
             justify-content: center;
             align-items: center;
         }
-
-        /* MEDIA QUERY: NASCONDI IL SITO E MOSTRA MESSAGGIO SOLO SU SCHERMI LARGHI (PC) */
-        @media screen and (min-width: 769px) { /* Puoi usare un breakpoint diverso, es. 960px */
-            body {
-                display: none; /* Nasconde tutto il contenuto del body su schermi larghi */
-            }
-            .desktop-message-container {
-                display: flex; /* Mostra il messaggio per desktop */
-            }
-        }
-
 
         /* Aggiungiamo box-sizing universale per un migliore controllo del layout */
         *, *::before, *::after {
@@ -73,26 +65,16 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            white-space: nowrap; /* Per la scritta Elena/Mirko */
-            overflow: hidden;
-            text-overflow: ellipsis; /* Opzionale */
         }
-
-        /* Media Query per schermi desktop e tablet grandi */
-        @media screen and (min-width: 769px) {
-            header {
-                min-height: 400px; /* Altezza maggiore per desktop/tablet */
-            }
-        }
-
+        /* REGOLE PER IL TESTO "ELENA ❤️ MIRKO" CHE NON VADA A CAPO */
         header h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
             color: #B27777;
             margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: nowrap; /* Impedisce al testo di andare a capo */
+            overflow: hidden;     /* Nasconde il contenuto che eccede i bordi */
+            text-overflow: ellipsis; /* Aggiunge "..." se il testo viene tagliato (opzionale) */
         }
 
         header h2 {
@@ -311,7 +293,14 @@
             margin-top: 1rem;
         }
 
-        /* Media Queries per Ottimizzazione Responsive */
+        /* --- Media Query per schermi desktop e tablet grandi (AUMENTA ALTEZZA HEADER) --- */
+        @media screen and (min-width: 769px) {
+            header {
+                min-height: 400px; /* Altezza maggiore per desktop/tablet */
+            }
+        }
+
+        /* Media Queries per Ottimizzazione Responsive (dimensioni generali) */
         @media screen and (max-width: 768px) {
             header h1 {
                 font-size: 2.8rem;
@@ -372,6 +361,16 @@
                 padding: 0.6rem 1rem;
             }
         }
+
+        /* Media query per schermi più grandi (PC): NASCONDE IL SITO, MOSTRA MESSAGGIO */
+        @media screen and (min-width: 769px) {
+            body {
+                display: none; /* Nasconde tutto il contenuto del body del sito */
+            }
+            .desktop-message-container {
+                display: flex; /* Mostra il messaggio per desktop */
+            }
+        }
     </style>
 </head>
 <body>
@@ -383,20 +382,21 @@
 
     <header>
         <div class="container">
-            <h1><span class="big-word">Elena<br>❤️<br> Mirko</span></h1>
+            <h1><span class="big-word">Mirko  &  Elena</span></h1>
         </div>
     </header>
 
     <main>
         <section id="programma">
-            <h3>Programma della giornata</h3>
-            <p>Sì, è tutto vero… ci sposiamo! 🎉</p>
-            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento<br>di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
+            <<h3>CI SPOSIAMO!! 🎉</h3>
+            <p>Sì, è tutto vero… </p>
+            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
+            <p><span class="big-word"><strong>Siamo lieti di invitarvi<br>al nostro matrimonio</strong></span><br>❤️</p>
             <p>La cerimonia ed il ricevimento si svolgeranno </p>
             <p><span class="big-word"><strong>Sabato 13 settembre 2025</strong></span></p>
             <p>presso </p>
             <p><span class="big-word"><strong>Du Lac et du Parc Grand Resort</strong></span></p>
-            <p>Riva del Garda (viale Rovereto, 44 - Riva del Garda)</p>
+            <p>Riva del Garda<BR>(viale Rovereto, 44 - Riva del Garda)</p>
             <p>Il conto alla rovescia è iniziato, e non vediamo l’ora di condividere con voi ogni istante di questa giornata speciale!</p>
         </section>
 
