@@ -113,7 +113,6 @@
             background-size: cover; /* L'immagine coprirà l'intera area */
             background-position: center center; /* Centra l'immagine */
             background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
-            color: #b6C1ad; /* Colore del testo per contrasto, assicurati che sia leggibile */
             position: relative; /* Necessario per l'overlay o il posizionamento di elementi interni */
             z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine */
         }
@@ -129,6 +128,14 @@
             background-color: rgba(255, 255, 255, 0.6); /* Bianco semi-trasparente */
             border-radius: 15px; /* Applica lo stesso border-radius della sezione */
             z-index: -1; /* Metti l'overlay dietro il contenuto ma sopra l'immagine */
+        }
+          /* Stili specifici per il testo all'interno della sezione regalo-nozze */
+        #regalo-nozze h3,
+        #regalo-nozze p,
+        #regalo-nozze strong {
+            color: #4A4A4A; /* Un grigio scuro o nero, per un ottimo contrasto con lo sfondo chiaro dell'overlay */
+            position: relative; /* Assicura che il testo sia sopra l'overlay */
+            z-index: 2;
         }
         /* FINE NUOVI STILI PER SFONDO SEZIONE REGALO NOZZE */
 
