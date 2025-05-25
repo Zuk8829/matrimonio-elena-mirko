@@ -127,11 +127,23 @@
             z-index: -1; /* Metti l'overlay dietro il contenuto ma sopra l'immagine */
         }
 
-        /* Stili specifici per il testo in #programma */
-        #programma h3,
-        #programma p,
+           /* Stili specifici per il TITOLO (h3) all'interno della sezione programma */
+        #programma h3 {
+            color: #B27777; /* Colore originale per i titoli, o un altro che preferisci */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stili specifici per i PARAGRAFI (p) all'interno della sezione programma */
+        #programma p {
+            color: #FFFFFF; /* Un grigio scuro per i paragrafi */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stili specifici per il TESTO IN GRASSETTO (strong) all'interno della sezione programma */
         #programma strong {
-            color: #B27777; /* Un grigio scuro per il testo normale in #programma */
+            color: #FFFFFF; /* Un colore ancora più scuro, quasi nero, per risaltare */
             position: relative;
             z-index: 2;
         }
