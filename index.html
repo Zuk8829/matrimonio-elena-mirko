@@ -62,7 +62,7 @@
             text-align: center;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            min-height: 550px; /* Altezza minima per mobile */
+            min-height: 350px; /* Altezza minima per mobile, aumentata */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,6 +78,7 @@
             white-space: nowrap; /* Impedisce al testo di andare a capo */
             overflow: hidden;     /* Nasconde il contenuto che eccede i bordi */
             text-overflow: ellipsis; /* Aggiunge "..." se il testo viene tagliato (opzionale) */
+            padding-bottom: 2rem; /* Aggiungo padding qui invece dei <br> */
         }
 
         header h2 {
@@ -101,7 +102,8 @@
             display: none;
         }
 
-        #programma, #regalo-nozze, #gallery, #rsvp-button-container {
+        /* Modificato: rimosso #gallery */
+        #programma, #regalo-nozze, #rsvp-button-container {
             text-align: center;
         }
 
@@ -299,13 +301,12 @@
         /* --- Media Query per schermi desktop e tablet grandi (AUMENTA ALTEZZA HEADER) --- */
         @media screen and (min-width: 769px) {
             header {
-                min-height: 400px; /* Altezza maggiore per desktop/tablet */
+                min-height: 600px; /* Altezza maggiore per desktop/tablet, ulteriormente aumentata */
             }
         }
 
         /* Media Queries per Ottimizzazione Responsive (dimensioni generali) */
         @media screen and (max-width: 768px) {
-            /* Rimosso il display: block !important */
             header h1 {
                 font-size: 2.8rem;
             }
@@ -406,7 +407,7 @@
 
     <header>
         <div class="container">
-            <h1><span class="big-word">Mirko   &   Elena</span><br><br><br><br><br><br><br></h1>
+            <h1><span class="big-word">Mirko & Elena</span></h1>
         </div>
     </header>
 
@@ -431,11 +432,6 @@
             Qui sotto trovate il nostro IBAN, nascosto con grazia ma senza troppa vergogna. 😉</p>
             <p style="text-align:center;"><strong>IBAN: IT26P080163532100000639848</strong></p>
             <p style="text-align:center;">Causale: Viaggio di nozze Mirko & Elena</p>
-        </section>
-
-        <section id="gallery">
-            <h3>Gallery</h3>
-            <p>Qui potremo aggiungere le foto più belle del nostro percorso insieme.</p>
         </section>
 
         <div id="rsvp-button-container">
