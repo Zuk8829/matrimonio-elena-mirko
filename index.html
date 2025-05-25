@@ -34,6 +34,12 @@
             flex-direction: column; /* Usiamo flex per centrare */
             justify-content: center;
             align-items: center;
+            /* Aggiungi queste proprietà per assicurarti che sia al di sopra di tutto e copra lo schermo */
+            position: fixed; /* Rende il contenitore fisso rispetto alla viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* Assicura che sia sopra gli altri elementi */
         }
 
         /* Aggiungiamo box-sizing universale per un migliore controllo del layout */
@@ -378,8 +384,9 @@
         /* Media query per schermi più grandi (PC): NASCONDE IL SITO, MOSTRA MESSAGGIO */
         /* QUESTA DEVE ESSERE L'ULTIMA REGOLA DI VISIBILITÀ PER ASSICURARSI CHE SIA APPLICATA CORRETTAMENTE */
         @media screen and (min-width: 769px) {
-            body {
-                display: none; /* Nasconde tutto il contenuto del body del sito */
+            /* Nasconde le sezioni principali del sito */
+            header, main, footer {
+                display: none;
             }
 
             .desktop-message-container {
@@ -406,7 +413,7 @@
         <section id="programma">
             <h3>CI SPOSIAMO!! 🎉</h3>
             <p>Sì, è tutto vero… </p>
-            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(con l’abito elegante e le scarpe scomode).</p>
+            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
             <p><span class="big-word"><strong>Siamo lieti di invitarvi<br>al nostro matrimonio</strong></span><br>❤️</p>
             <p>La cerimonia ed il ricevimento si svolgeranno </p>
             <p><span class="big-word"><strong>Sabato 13 settembre 2025</strong></span></p>
