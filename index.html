@@ -34,12 +34,12 @@
             flex-direction: column; /* Usiamo flex per centrare */
             justify-content: center;
             align-items: center;
-            /* Aggiungi queste proprietà per assicurarti che sia al di sopra di tutto e copra lo schermo */
-            position: fixed; /* Rende il contenitore fisso rispetto alla viewport */
+            /* Queste proprietà erano presenti e funzionavano prima del problema */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 9999; /* Assicura che sia sopra gli altri elementi */
+            z-index: 9999;
         }
 
         /* Aggiungiamo box-sizing universale per un migliore controllo del layout */
@@ -305,6 +305,7 @@
 
         /* Media Queries per Ottimizzazione Responsive (dimensioni generali) */
         @media screen and (max-width: 768px) {
+            /* Rimosso il display: block !important */
             header h1 {
                 font-size: 2.8rem;
             }
@@ -400,7 +401,7 @@
         <h1>Sito Ottimizzato per Smartphone</h1>
         <p>Per una migliore esperienza, ti preghiamo di visualizzare questo sito dal tuo smartphone.</p>
         <p>Inquadra il QR code che vedi sulla partecipazione o qui riportato per accedere direttamente.</p>
-        <<img src="img/tuo_qr_code.png" alt="QR Code per il sito" style="max-width: 200px; margin-top: 1rem;"
+        <img src="img/tuo_qr_code" alt="QR Code per il sito" style="max-width: 200px; margin-top: 1rem;">
     </div>
 
     <header>
@@ -413,7 +414,7 @@
         <section id="programma">
             <h3>CI SPOSIAMO!! 🎉</h3>
             <p>Sì, è tutto vero… </p>
-            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(quello con l’abito elegante e le scarpe scomode).</p>
+            <p>Dopo 6423 giorni di Amore…<br> abbiamo deciso che è arrivato il momento di fare il grande passo<br>(con l’abito elegante e le scarpe scomode).</p>
             <p><span class="big-word"><strong>Siamo lieti di invitarvi<br>al nostro matrimonio</strong></span><br>❤️</p>
             <p>La cerimonia ed il ricevimento si svolgeranno </p>
             <p><span class="big-word"><strong>Sabato 13 settembre 2025</strong></span></p>
