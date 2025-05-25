@@ -106,7 +106,37 @@
         #programma, #regalo-nozze, #rsvp-button-container {
             text-align: center;
         }
+/* INIZIO STILI AGGIORNATI PER SFONDO SEZIONE PROGRAMMA E TESTO */
+        #programma {
+            background-image: url('img/sfondo_programma.jpg'); /* Sostituisci con il nome del tuo file immagine */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
 
+        /* Overlay semi-trasparente per migliorare la leggibilità del testo in #programma */
+        #programma::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.75); /* Bianco più trasparente, opacità 0.75 */
+            border-radius: 15px;
+            z-index: -1; /* Metti l'overlay dietro il contenuto ma sopra l'immagine */
+        }
+
+        /* Stili specifici per il testo in #programma */
+        #programma h3,
+        #programma p,
+        #programma strong {
+            color: #B27777; /* Un grigio scuro per il testo normale in #programma */
+            position: relative;
+            z-index: 2;
+        }
+        /* FINE STILI AGGIORNATI PER SFONDO SEZIONE PROGRAMMA E TESTO */
+        
         /* INIZIO NUOVI STILI PER SFONDO SEZIONE REGALO NOZZE */
         #regalo-nozze {
             background-image: url('img/sfondo_regalo.jpg'); /* Sostituisci con il nome del tuo file immagine */
