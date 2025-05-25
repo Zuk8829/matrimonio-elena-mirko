@@ -62,7 +62,7 @@
             text-align: center;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            min-height: 550px; /* Altezza minima per mobile, aumentata */
+            min-height: 350px; /* Altezza minima per mobile, aumentata */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -106,6 +106,32 @@
         #programma, #regalo-nozze, #rsvp-button-container {
             text-align: center;
         }
+
+        /* INIZIO NUOVI STILI PER SFONDO SEZIONE REGALO NOZZE */
+        #regalo-nozze {
+            background-image: url('img/sfondo_regalo.jpg'); /* Sostituisci con il nome del tuo file immagine */
+            background-size: cover; /* L'immagine coprirà l'intera area */
+            background-position: center center; /* Centra l'immagine */
+            background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+            color: #B27777; /* Colore del testo per contrasto, assicurati che sia leggibile */
+            position: relative; /* Necessario per l'overlay o il posizionamento di elementi interni */
+            z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine */
+        }
+
+        /* Opzionale: Aggiungi un overlay semi-trasparente per migliorare la leggibilità del testo */
+        #regalo-nozze::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.6); /* Bianco semi-trasparente */
+            border-radius: 15px; /* Applica lo stesso border-radius della sezione */
+            z-index: -1; /* Metti l'overlay dietro il contenuto ma sopra l'immagine */
+        }
+        /* FINE NUOVI STILI PER SFONDO SEZIONE REGALO NOZZE */
+
 
         #rsvp-button-container {
             margin: 2rem auto;
@@ -407,7 +433,7 @@
 
     <header>
         <div class="container">
-            <h1><span class="big-word">Mirko & Elena</span><br><br><br><br><br><br></h1>
+            <h1><span class="big-word">Mirko & Elena</span></h1>
         </div>
     </header>
 
